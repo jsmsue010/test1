@@ -1,0 +1,465 @@
+.main_visual {
+	width: 100%;
+	height: 100vmin;
+	position: relative;
+	background-color: rgb(238, 233, 228);
+	.wrapper {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		.pic {
+			display: inline-block;
+			//width: calc(100% / 4);
+			flex: 1;
+			height: 100%;
+			//border: 1px solid rgb(77, 80, 253);
+			position: relative;
+			overflow: hidden;
+			z-index: 0;
+			transition: 1s;
+
+			video {
+				width: 100%;
+				height: 100%;
+				//margin-top: 15vh;
+				//background-color: #777;
+				opacity: 0;
+				margin: 0 1px;
+				transition: 0.7s;
+				position: absolute;
+				bottom: 0;
+				left: 0px;
+				object-fit: cover;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				bottom: 0;
+				transition: 0.7s;
+				margin: 0 1px;
+				object-fit: cover;
+				opacity: 0.3;
+				filter: grayscale(1) brightness(1.3);
+			}
+			.box {
+				width: 100%;
+				height: 100%;
+				//margin-top: 15vh;
+				position: absolute;
+				bottom: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				span {
+					cursor: pointer;
+					position: relative;
+					width: 20vmin;
+					text-align: center;
+					transition: 0.4s;
+					font: bold 3vmin/1 'Poppins';
+					> span {
+						font: 8vmin/1 'Poppins';
+						color: #222;
+						opacity: 0.8;
+					}
+					&:hover {
+						color: rgb(255, 255, 255);
+						opacity: 0.8;
+						> span {
+							color: rgb(255, 255, 255);
+							opacity: 0.8;
+						}
+					}
+				}
+				.circlePlay {
+					display: none;
+				}
+			}
+		}
+	}
+	.index {
+		display: none;
+	}
+}
+
+main {
+	.inner {
+		width: 1280px;
+		margin: 0 auto;
+
+		.brandInfo1 {
+			width: 100%;
+			margin-top: 30vmin;
+			margin-bottom: 10vmin;
+			position: relative;
+
+			h1 {
+				text-align: center;
+				font: bold 5vmin 'Poppins';
+				color: #222;
+				padding-top: 3vmin;
+			}
+			> h2 {
+				text-align: center;
+				font: bold 2.5vmin 'Poppins';
+				color: #777;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.box {
+				margin-top: 30vmin;
+				width: 100%;
+				margin-right: 2vmin;
+				transition: all 0.5s;
+
+				&:nth-of-type(2) {
+					margin-top: 0;
+				}
+
+				&:nth-of-type(1),
+				&:nth-of-type(2) {
+					article {
+						&:nth-of-type(2) {
+							margin-top: 5%;
+						}
+					}
+				}
+
+				> article {
+					width: 32%;
+					margin-right: 2%;
+					float: left;
+					&:nth-of-type(3) {
+						margin-right: 0;
+					}
+					img {
+						width: 100%;
+						height: 40vmin;
+						object-fit: cover;
+						padding: 0 1vmin;
+					}
+					h3 {
+						padding: 3vmin;
+						font: bold 2.5vmin/1.2 'Poppins';
+						color: #222;
+					}
+					p {
+						padding: 0 3vmin;
+						min-height: 15vmin;
+						margin-bottom: 5vmin;
+						font: normal 2vmin/1.5 'Poppins';
+						color: #666;
+					}
+				}
+			}
+
+			.link-brand {
+				display: block;
+				position: absolute;
+				bottom: 10vmin;
+				left: 50%;
+				transform: translateX(-50%);
+				font: italic bold 2.4vmin/1.5 'Poppins';
+				color: #333;
+				transition: 0.2s;
+
+				&:hover {
+					color: #fff;
+					background: #b3b1b1ba;
+					padding: 0 1vmin;
+				}
+			}
+		}
+
+		.brandInfo2 {
+			position: relative;
+			width: 100%;
+			margin: 20vmin 0 40vmin;
+			text-align: center;
+
+			& article {
+				//filter: contrast(70%);
+				&:nth-of-type(1) {
+					transition: all 1s;
+				}
+				&:nth-of-type(2) {
+					transition: all 1s 0.3s;
+				}
+				&:nth-of-type(3) {
+					transition: all 1s 0.5s;
+				}
+			}
+
+			h1 {
+				font: bold 5vmin 'Poppins';
+				color: #222;
+				padding-top: 3vmin;
+			}
+			> h2 {
+				font: bold 2.4vmin 'Poppins';
+				color: #777;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.wrap {
+				position: relative;
+				&::after {
+					display: block;
+					content: '';
+					clear: both;
+				}
+				article {
+					padding-top: 10vmin;
+					float: left;
+					width: 30%;
+					margin-right: 5%;
+					&:nth-of-type(3) {
+						margin-right: 0;
+					}
+
+					img {
+						width: 100%;
+						height: 30vmin;
+						object-fit: cover;
+					}
+
+					h3 {
+						font: bold 3.2vmin 'Poppins';
+						color: #222;
+						min-height: 3vmin;
+						margin: 3vmin 0;
+					}
+				}
+				.linkWrapper {
+					width: 0;
+					transition: 0.5s;
+					overflow: hidden;
+					position: absolute;
+					height: calc(2.4vmin * 1.5);
+					bottom: -20%;
+					left: 50%;
+					transform: translateX(-50%);
+					a {
+						width: 60%;
+						margin: 0 auto;
+						height: calc(2.4vmin * 1.5);
+						display: block; //a태그 위형제 요소들이 float이라서 display:block하면 제일 위로 간다.
+						font: italic bold 2.4vmin/1.5 'Poppins';
+						color: #fff;
+						background-color: #b3b1b1ba;
+						transition: 1s;
+
+						&:hover {
+							color: #fff;
+							background: #b3b1b1ba;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1279px) {
+	main {
+		.inner {
+			width: 90%;
+			margin: 0 auto;
+
+			.brandInfo1 {
+				width: 100%;
+				margin: 30vmin 0 10vmin;
+				position: relative;
+
+				h1 {
+					text-align: center;
+					font: bold 5vmin 'Poppins';
+					color: #222;
+					padding-top: 3vmin;
+				}
+				h2 {
+					text-align: center;
+					font: bold 2.5vmin 'Poppins';
+					color: #777;
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				.box {
+					margin-top: 20vmin;
+					width: 100%;
+					margin-right: 2vmin;
+
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					&:nth-of-type(2) {
+						margin-top: 0;
+						margin-bottom: 20vmin;
+					}
+
+					&:nth-of-type(1),
+					&:nth-of-type(2) {
+						article {
+							&:nth-of-type(2) {
+								margin-top: 5%;
+							}
+						}
+					}
+					article {
+						width: 32%;
+						margin-right: 2%;
+						float: left;
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+						img {
+							width: 100%;
+							height: 40vmin;
+							object-fit: cover;
+							padding: 0 1vmin;
+						}
+						h3 {
+							padding: 3vmin;
+							font: bold 2.5vmin/1.2 'Poppins';
+							color: #222;
+						}
+						p {
+							padding: 0 3vmin;
+							min-height: 15vmin;
+							margin-bottom: 5vmin;
+							font: normal 2vmin/1.5 'Poppins';
+							color: #666;
+						}
+					}
+				}
+				.link-brand {
+					display: block;
+					position: absolute;
+					bottom: 0vmin;
+					left: 50%;
+					transform: translateX(-50%);
+					font: italic bold 2.4vmin/1.5 'Poppins';
+					color: #333;
+					transition: 0.2s;
+
+					&:hover {
+						color: #fff;
+						background: #b3b1b1ba;
+						padding: 0 1vmin;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 899px) {
+	main {
+		.inner {
+			width: 90%;
+			margin: 0 auto;
+
+			.brandInfo1 {
+				width: 100%;
+				margin: 30vmin 0 10vmin;
+				position: relative;
+
+				h1 {
+					text-align: center;
+					font: bold 5vmin 'Poppins';
+					color: #222;
+					padding-top: 3vmin;
+				}
+				h2 {
+					text-align: center;
+					font: bold 2.5vmin 'Poppins';
+					color: #777;
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				.box {
+					margin-top: 20vmin;
+					width: 100%;
+					margin-right: 2vmin;
+
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					&:nth-of-type(2) {
+						margin-top: 0;
+						margin-bottom: 20vmin;
+					}
+
+					&:nth-of-type(1),
+					&:nth-of-type(2) {
+						article {
+							&:nth-of-type(2) {
+								margin-top: 5%;
+							}
+						}
+					}
+					article {
+						width: 32%;
+						margin-right: 2%;
+						float: left;
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+						img {
+							width: 100%;
+							height: 40vmin;
+							object-fit: cover;
+							padding: 0 1vmin;
+						}
+						h3 {
+							padding: 3vmin;
+							font: bold 2.5vmin/1.2 'Poppins';
+							color: #222;
+						}
+						p {
+							padding: 0 3vmin;
+							min-height: 15vmin;
+							margin-bottom: 5vmin;
+							font: normal 2vmin/1.5 'Poppins';
+							color: #666;
+						}
+					}
+				}
+				.link-brand {
+					display: block;
+					position: absolute;
+					bottom: 0vmin;
+					left: 50%;
+					transform: translateX(-50%);
+					font: italic bold 2.4vmin/1.5 'Poppins';
+					color: #333;
+					transition: 0.2s;
+
+					&:hover {
+						color: #fff;
+						background: #b3b1b1ba;
+						padding: 0 1vmin;
+					}
+				}
+			}
+		}
+	}
+}

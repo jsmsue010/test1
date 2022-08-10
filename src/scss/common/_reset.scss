@@ -1,0 +1,25 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+.wrap {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.h {
+	opacity: 0;
+	position: absolute;
+	top: -999999;
+}

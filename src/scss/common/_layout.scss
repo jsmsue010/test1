@@ -1,0 +1,76 @@
+.layout {
+	width: 100%;
+
+	.skipNavi {
+		position: absolute;
+		> button {
+			position: relative;
+			top: -100px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 10;
+			border: 2px solid #222;
+			box-sizing: border-box;
+			&:focus-within {
+				top: 0;
+			}
+		}
+	}
+	.textBox {
+		position: relative;
+		width: 100%;
+		height: 50vh;
+		margin: 0 auto;
+
+		h1 {
+			font: bold 15vmin/1 'Poppins';
+			color: #333;
+			position: absolute;
+			bottom: 3vmin;
+			left: 3%;
+		}
+
+		p {
+			font: bold 2.2vmin/1.5 'Lora';
+			color: #333;
+			position: absolute;
+			bottom: 3vmin;
+			right: 3%;
+			width: 25%;
+		}
+	}
+
+	.banner-image {
+		width: 100%;
+		height: 50vh;
+		object-fit: cover;
+	}
+
+	main {
+		position: relative;
+		width: 100%;
+		.anchor {
+			position: absolute;
+			width: 100%;
+			height: 100vh;
+			z-index: -5;
+		}
+	}
+	.content1 {
+		height: 800px;
+	}
+}
+
+@media screen and (max-width: 1179px) {
+	.layout {
+		.skipNavi {
+			> button {
+				&:focus-within {
+					top: 100px;
+					left: 50vw;
+					z-index: 10;
+				}
+			}
+		}
+	}
+}

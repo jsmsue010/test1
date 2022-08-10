@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "Julia",
+      "position": "CEO",
+      "pic": "member1.jpg"
+    },
+    {
+      "name": "denny",
+      "position": "Vice President",
+      "pic": "member2.jpg"
+    },
+    {
+      "name": "mia",
+      "position": "Management",
+      "pic": "member3.jpg"
+    },
+    {
+      "name": "Lilly",
+      "position": "M.D",
+      "pic": "member4.jpg"
+    },
+    {
+      "name": "Michael",
+      "position": "Q.C",
+      "pic": "member5.jpg"
+    },
+    {
+      "name": "Loren",
+      "position": "Designer",
+      "pic": "member6.jpg"
+    }
+  ]
+}

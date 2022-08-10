@@ -1,0 +1,186 @@
+nav {
+	width: 100%;
+	height: 11vmin;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	> h1 {
+		position: absolute;
+		line-height: 0;
+		top: 5vmin;
+		left: 5vmin;
+		a {
+			font: bold 24px/1 'Poppins';
+			color: #222;
+		}
+	}
+
+	.menu-pc {
+		ul {
+			position: absolute;
+			top: 5vmin;
+			right: 50%;
+			transform: translateX(50%);
+			li {
+				float: left;
+				margin-left: 30px;
+				line-height: 10px;
+				padding-bottom: 20px;
+				position: relative;
+				font: bold 20px/1 'Poppins';
+				color: #444;
+				a {
+					font: bold 20px/1 'Poppins';
+					color: #444;
+				}
+				&:hover {
+					> .sec {
+						height: 170px;
+					}
+				}
+				.sec {
+					width: 200%;
+					height: 0;
+					margin-left: -20px;
+					padding-top: 25px;
+					transition: 0.4s;
+					position: absolute;
+					overflow: hidden;
+					top: 2vmin;
+					right: auto;
+					transform: none;
+					> li {
+						margin-top: 5px;
+						margin-bottom: 15px;
+						margin-left: 20px;
+						padding-bottom: 0;
+						display: block;
+						width: 100%;
+						> a {
+							font: 20px/1 'Poppins';
+							color: #222;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.menu-tabl {
+		display: none;
+		button {
+			border: none;
+		}
+		.icon {
+			position: absolute;
+			top: 2vmin;
+			right: 0;
+			color: #333;
+		}
+		ul {
+			position: fixed;
+			top: 0;
+			height: 100vh;
+			width: 35vw;
+			background-color: #444;
+
+			li {
+				width: 100%;
+				display: block;
+				font: 24px/1 'Poppins';
+				margin-left: 12vmin;
+				margin-top: 3vmin;
+				a {
+					color: #fff;
+				}
+			}
+		}
+		.close {
+			position: fixed;
+			top: 3vmin;
+			left: 5vmin;
+			font: bold 32px/0.75 'Poppins';
+			color: #fff;
+			cursor: pointer;
+			z-index: 5;
+			border: none;
+			background: none;
+		}
+	}
+}
+
+@media screen and (max-width: 1179px) {
+	nav {
+		height: 11vmin;
+		h1 {
+			top: 7.5vmin;
+			left: 13vmin;
+			font: bold 6vmin/1 'arial';
+			a {
+				display: none;
+			}
+		}
+		.menu-pc {
+			display: none;
+		}
+		.menu-tabl {
+			display: block;
+			.icon {
+				top: 5vmin;
+				left: 5vmin;
+				font: bold 4vmin/0 'arial';
+				background: rgba(255, 255, 255, 0.808);
+				padding: 1%;
+				border-radius: 15%;
+				z-index: 5;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 899px) {
+	nav {
+		.menu-tabl {
+			display: block;
+			.icon {
+				top: 5vmin;
+				left: 5vmin;
+				font: bold 6.5vmin/0 'arial';
+				background: rgba(255, 255, 255, 0.808);
+				padding: 2%;
+				border-radius: 15%;
+				z-index: 5;
+			}
+			ul {
+				width: 45vw;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 599px) {
+	nav {
+		.menu-tabl {
+			display: block;
+			.icon {
+				top: 5vmin;
+				left: 5vmin;
+				font: bold 6.5vmin/0 'arial';
+				background: rgba(255, 255, 255, 0.808);
+				padding: 2%;
+				border-radius: 15%;
+				z-index: 5;
+			}
+			ul {
+				width: 15rem;
+				li {
+					margin-top: 5vmin;
+					margin-left: 15vmin;
+				}
+			}
+			.close {
+				top: 5vmin;
+			}
+		}
+	}
+}

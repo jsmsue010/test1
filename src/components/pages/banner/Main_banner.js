@@ -1,0 +1,225 @@
+import React, { useState, useRef } from 'react';
+import Menu from '../../common/Menu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+import { Anim } from '../../class/anime';
+const path = process.env.PUBLIC_URL;
+
+const imgs = [
+	`${path}/img/store2_Moment.jpg`,
+	`${path}/img/brandMoment.jpg`,
+	`${path}/img/product3_Moment.jpg`,
+	`${path}/img/brand2_Moment.jpg`,
+];
+const vids = [
+	`${path}/img/store2_Trim2.mp4`,
+	`${path}/img/brand.mp4`,
+	`${path}/img/product3.mp4`,
+	`${path}/img/brand2.mp4`,
+];
+
+const title = [
+	'TECHNOLOGY WITH STYLE',
+	'A QUESTION OF STYLE',
+	'DISCOVER YOUR STYLE',
+	'BEYOUND THE STYLE',
+];
+
+const alt = [
+	'product image1',
+	'product image2',
+	'product image3',
+	'product image4',
+];
+
+function Main_banner() {
+	const visual = useRef(null);
+	const index = useRef(0);
+	let enable = true;
+
+	const [flex, setFlex] = useState(false);
+	const [mobile, setMoblie] = useState(false);
+
+	useEffect(() => {
+		getVw();
+		window.addEventListener('resize', getVw);
+		return () => window.removeEventListener('resize', getVw);
+	}, []);
+
+	function getVw() {
+		matchMedia('screen and (max-width: 649px)').matches
+			? setMoblie(true)
+			: setMoblie(false);
+	}
+
+	const show = (n) => {
+		const pics = visual.current.querySelectorAll('.pic');
+		const pic = pics[n];
+		pic.querySelector('img').style.opacity = 0;
+		pic.querySelector('video').style.opacity = 1;
+		pic.querySelector('video').play();
+	};
+
+	const pause = (n) => {
+		const pics = visual.current.querySelectorAll('.pic');
+		const pic = pics[n];
+		if (!flex) {
+			pic.querySelector('img').style.opacity = 0.3;
+			pic.querySelector('video').style.opacity = 0;
+			pic.querySelector('video').pause();
+		}
+	};
+
+	const more = (n, b) => {
+		const pics = visual.current.querySelectorAll('.pic');
+		const pic = pics[n];
+		if (b) {
+			pics.forEach((n) => (n.style.flex = 0));
+			pic.style.flex = 4;
+			pic.querySelector('.box span').style.color = '#fff';
+		} else {
+			pics.forEach((n) => (n.style.flex = 1));
+			pic.querySelector('.box span').style.color = '#111';
+		}
+	};
+
+	let play = false;
+
+	const vidPlay = (n) => {
+		const pics = visual.current.querySelectorAll('.pic');
+		const pic = pics[n];
+		if (!play) {
+			pic.querySelector('img').style.opacity = 0;
+			pic.querySelector('video').style.opacity = 1;
+			pic.querySelector('.box span').style.color = '#fff';
+			pic.querySelector('video').play();
+			play = true;
+		} else {
+			pic.querySelector('video').pause();
+			pic.querySelector('img').style.opacity = 0.5;
+			pic.querySelector('video').style.opacity = 0;
+			pic.querySelector('.box span').style.color = '#111';
+			play = false;
+		}
+	};
+
+	const moving = (n) => {
+		if (enable) {
+			enable = false;
+			const pics = visual.current.querySelectorAll('.pic');
+			visual.current.style.marginLeft = '0%'; //위치 초기화. 이 코드가 없으면 위치를 이상하게 설정된채로 Anim이 실행된다.
+			if (index.current - n > 0) {
+				pics[n].style.left = '-33.33%';
+				pics[n].style.opacity = '1';
+				new Anim(visual.current, {
+					prop: 'margin-left',
+					value: '100%',
+					duration: 500,
+					callback: () => {
+						visual.current.style.marginLeft = '0%';
+						pics.forEach((_, idx) => {
+							pics[idx].style.left = '0%';
+							pics[idx].style.zIndex = 0;
+							pics[idx].style.opacity = 0;
+						});
+						pics[n].style.opacity = '1';
+						pics[n].style.zIndex = '5';
+						enable = true;
+						index.current = n;
+					},
+				});
+			} else if (index.current - n < 0) {
+				pics[n].style.left = '33.33%';
+				pics[n].style.opacity = '1';
+				new Anim(visual.current, {
+					prop: 'margin-left',
+					value: '-100%',
+					duration: 500,
+					callback: () => {
+						visual.current.style.marginLeft = '0%';
+						pics.forEach((_, idx) => {
+							pics[idx].style.left = '0%';
+							pics[idx].style.zIndex = 0;
+							pics[idx].style.opacity = 0;
+						});
+						pics[n].style.opacity = '1';
+						pics[n].style.zIndex = '5';
+						enable = true;
+						index.current = n;
+					},
+				});
+			} else enable = true;
+		} else {
+			return;
+		}
+	};
+
+	let start;
+
+	let end;
+
+	const touchSt = (e) => {
+		start = e.changedTouches[0].clientX;
+	};
+
+	const touchEnd = (e) => {
+		end = e.changedTouches[0].clientX;
+		const move = start - end;
+		if (move > 50) {
+			let newIndex = index.current + 1;
+			moving(newIndex == 4 ? 3 : newIndex);
+		} else if (move < -50) {
+			let newIndex = index.current - 1;
+			moving(newIndex == -1 ? 0 : newIndex);
+		}
+	};
+
+	return (
+		<>
+			<Menu />
+			<div
+				className='main_visual'
+				onTouchStart={mobile ? (e) => touchSt(e) : null}
+				onTouchEnd={mobile ? (e) => touchEnd(e) : null}>
+				<div className='wrapper' ref={visual}>
+					{imgs.map((i, idx) => {
+						return (
+							<div className='pic' key={idx}>
+								<img src={i} alt={alt[idx]} />
+								<video src={vids[idx]} muted loop />
+								<div className='box'>
+									<span
+										onMouseEnter={!mobile ? () => show(idx) : null}
+										onMouseLeave={!mobile ? () => pause(idx) : null}
+										onClick={
+											!mobile
+												? () => {
+														setFlex(!flex);
+														more(idx, !flex);
+												  }
+												: null
+										}>
+										{title[idx]}
+									</span>
+									<FontAwesomeIcon
+										icon={faCirclePlay}
+										className='circlePlay'
+										onClick={() => vidPlay(idx)}
+									/>
+								</div>
+							</div>
+						);
+					})}
+				</div>
+				<div className='index'>
+					{imgs.map((_, idx) => {
+						return <button onClick={() => moving(idx)} key={idx}></button>;
+					})}
+				</div>
+			</div>
+		</>
+	);
+}
+
+export default Main_banner;
