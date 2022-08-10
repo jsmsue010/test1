@@ -1,0 +1,93 @@
+.mapCompo {
+	width: 70%;
+	margin: 20vmin auto;
+	> span {
+		font: bold 4vmin/1 'Poppins';
+	}
+	.wrap {
+		width: 100%;
+		position: relative;
+		margin-top: 5vmin;
+		font-size: 0;
+		#map1 {
+			display: inline-block;
+			width: 55%;
+			height: 40vmin;
+			filter: grayscale(0.7);
+			z-index: 2;
+		}
+		.txt {
+			text-align: center;
+			display: inline-block;
+			width: 55%;
+			height: calc(40vmin + 4vmin);
+			background: #222;
+			color: #ddd;
+			position: absolute;
+			top: 4vmin;
+			right: 0%;
+			font: 2vmin/1 'Poppins';
+			h1 {
+				margin: 3vmin 0vmin 2vmin 5vmin;
+			}
+			.location {
+				width: 60%;
+				margin-left: 30%;
+				margin-bottom: 1vmin;
+				text-align: left;
+				p {
+					margin-bottom: 1vmin;
+				}
+			}
+			form {
+				width: 70%;
+				margin-left: 25%;
+				fieldset {
+					border: none;
+					position: relative;
+				}
+				.h {
+					opacity: 0;
+				}
+				table {
+					width: 90%;
+					th {
+						width: 30%;
+					}
+				}
+				input[type='text'] {
+					width: 100%;
+					height: 3vmin;
+					font: 1.5vmin/1 'Poppins';
+					margin: 1vmin 0;
+				}
+				select {
+					margin: 1vmin 0;
+					height: 3vmin;
+					width: 100%;
+				}
+				input[type='submit'] {
+					margin-top: 2vmin;
+					width: 90%;
+					height: 5vmin;
+					position: absolute;
+					left: 0;
+				}
+			}
+		}
+	}
+	.btnBox {
+		width: 55%;
+		text-align: left;
+		position: relative;
+		z-index: 2;
+		button {
+			width: 25%;
+			height: 5vmin;
+			border: none;
+			font: 1.5vmin/2 'Poppins';
+			cursor: pointer;
+			border-right: rgb(255, 255, 255) solid 1px;
+		}
+	}
+}

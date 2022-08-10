@@ -3,9 +3,9 @@ import { useRouteMatch } from 'react-router-dom';
 import Main_banner from '../pages/banner/Main_banner';
 import Brand_banner from '../pages/banner/Brand_banner';
 
-import Brand from '../pages/Brand';
 import Main_content from '../pages/content/main/Main_content';
 import Footer from './Footer';
+import Brand_contetnt from '../pages/content/brand/Brand_content';
 
 function Layout({ children }) {
 	const init = useRef(null);
@@ -29,32 +29,32 @@ function Layout({ children }) {
 
 		case '/brand':
 			banner = <Brand_banner />;
-			content = <Brand />;
+			content = <Brand_contetnt />;
 			break;
 
 		case '/product':
-			banner = <Brand />;
-			content = <Brand />;
+			banner = <Brand_banner />;
+			content = <Brand_contetnt />;
 			break;
 
 		case '/gallery':
-			banner = <Brand />;
-			content = <Brand />;
+			banner = <Brand_banner />;
+			content = <Brand_contetnt />;
 			break;
 
 		case '/youtube':
-			banner = <Brand />;
-			content = <Brand />;
+			banner = <Brand_banner />;
+			content = <Brand_contetnt />;
 			break;
 
 		case '/help':
-			banner = <Brand />;
-			content = <Brand />;
+			banner = <Brand_banner />;
+			content = <Brand_contetnt />;
 			break;
 
 		case '/signup':
-			banner = <Brand />;
-			content = <Brand />;
+			banner = <Brand_banner />;
+			content = <Brand_contetnt />;
 			break;
 
 		default:

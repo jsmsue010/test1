@@ -1,7 +1,7 @@
 import React from 'react';
 function Footer() {
 	return (
-		<footer>
+		<footer tabIndex={0}>
 			<div className='inner'>
 				<h1>CHROME KITCHEN</h1>
 				<ul>
