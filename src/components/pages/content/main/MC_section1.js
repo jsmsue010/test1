@@ -113,7 +113,7 @@ function MC_section1() {
 							key={idx}
 							className='section1-article '
 							tabIndex={0}
-							role='article'
+							//role='article'
 							onFocus={animation}>
 							<img src={i} alt={alt1[idx]} />
 							<h3>{title1[idx]}</h3>
@@ -133,7 +133,7 @@ function MC_section1() {
 							key={idx}
 							className='section1-article '
 							tabIndex={0}
-							role='article'
+							//role='article'
 							onFocus={animation}>
 							<img src={i} alt={alt2[idx]} />
 							<h3>{title2[idx]}</h3>

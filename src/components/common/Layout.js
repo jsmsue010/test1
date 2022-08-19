@@ -2,10 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import Main_banner from '../pages/banner/Main_banner';
 import Brand_banner from '../pages/banner/Brand_banner';
+import Brand_content from '../pages/content/brand/Brand_content';
 
 import Main_content from '../pages/content/main/Main_content';
 import Footer from './Footer';
-import Brand_contetnt from '../pages/content/brand/Brand_content';
+import Board_content from '../pages/content/board/Board_content';
+import Product_content from '../pages/content/product/Product_content';
+import SignUp_content from '../pages/content/SignUp_content';
+import Gallery_content from '../pages/content/Gallery_content';
+import Youtube_content from '../pages/content/youtube/Youtube_content';
 
 function Layout({ children }) {
 	const init = useRef(null);
@@ -29,32 +34,32 @@ function Layout({ children }) {
 
 		case '/brand':
 			banner = <Brand_banner />;
-			content = <Brand_contetnt />;
+			content = <Brand_content />;
 			break;
 
 		case '/product':
 			banner = <Brand_banner />;
-			content = <Brand_contetnt />;
+			content = <Product_content />;
 			break;
 
 		case '/gallery':
 			banner = <Brand_banner />;
-			content = <Brand_contetnt />;
+			content = <Gallery_content />;
 			break;
 
 		case '/youtube':
 			banner = <Brand_banner />;
-			content = <Brand_contetnt />;
+			content = <Youtube_content />;
 			break;
 
-		case '/help':
+		case '/board':
 			banner = <Brand_banner />;
-			content = <Brand_contetnt />;
+			content = <Board_content />;
 			break;
 
-		case '/signup':
+		case '/sign_up':
 			banner = <Brand_banner />;
-			content = <Brand_contetnt />;
+			content = <SignUp_content />;
 			break;
 
 		default:

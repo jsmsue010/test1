@@ -34,13 +34,17 @@ const alt = [
 ];
 
 function Main_banner() {
+	const init = useRef(null);
 	const visual = useRef(null);
 	const index = useRef(0);
-	let enable = true;
+	const indexButton = useRef(null);
 
 	const [flex, setFlex] = useState(false);
 	const [mobile, setMoblie] = useState(false);
 
+	let enable = true;
+
+	//커스텀훅으로 만들기.
 	useEffect(() => {
 		getVw();
 		window.addEventListener('resize', getVw);
@@ -48,10 +52,11 @@ function Main_banner() {
 	}, []);
 
 	function getVw() {
-		matchMedia('screen and (max-width: 649px)').matches
+		matchMedia('screen and (max-width: 699px)').matches
 			? setMoblie(true)
 			: setMoblie(false);
 	}
+	//
 
 	const show = (n) => {
 		const pics = visual.current.querySelectorAll('.pic');
@@ -175,11 +180,38 @@ function Main_banner() {
 		}
 	};
 
+	const targetPlayBt = () => {
+		const playBt = visual.current.querySelectorAll('button');
+		playBt[index.current].focus();
+	};
+	const playBtKeyEvent = (e) => {
+		console.log(e.currentTarget);
+		if (e.key === 'Tab') {
+			e.preventDefault();
+			const bt = indexButton.current.querySelectorAll('button');
+			bt[0].focus();
+		}
+		if (e.shiftKey && e.key === 'Tab') {
+			e.preventDefault();
+			init.current.focus();
+		}
+		if (e.key === 'Enter') vidPlay(index.current);
+	};
+	const indexBtKeyEvent = (e) => {
+		const playBt = visual.current.querySelectorAll('button');
+		if (e.shiftKey && e.key === 'Tab') {
+			e.preventDefault();
+			playBt[index.current].focus();
+		}
+	};
+
 	return (
 		<>
 			<Menu />
 			<div
 				className='main_visual'
+				ref={init}
+				tabIndex={0}
 				onTouchStart={mobile ? (e) => touchSt(e) : null}
 				onTouchEnd={mobile ? (e) => touchEnd(e) : null}>
 				<div className='wrapper' ref={visual}>
@@ -202,19 +234,32 @@ function Main_banner() {
 										}>
 										{title[idx]}
 									</span>
-									<FontAwesomeIcon
-										icon={faCirclePlay}
-										className='circlePlay'
-										onClick={() => vidPlay(idx)}
-									/>
+									<button
+										className='playBt'
+										onKeyDown={playBtKeyEvent}
+										onFocus={targetPlayBt}
+										aria-label={'play button'}>
+										<FontAwesomeIcon
+											icon={faCirclePlay}
+											className='circlePlay'
+											onClick={() => vidPlay(idx)}
+										/>
+									</button>
 								</div>
 							</div>
 						);
 					})}
 				</div>
-				<div className='index'>
+				<div className='index' ref={indexButton}>
 					{imgs.map((_, idx) => {
-						return <button onClick={() => moving(idx)} key={idx}></button>;
+						return (
+							<button
+								className='indexBt'
+								onClick={() => moving(idx)}
+								key={idx}
+								onKeyDown={idx === 0 ? indexBtKeyEvent : null}
+								aria-label={`to video ${idx + 1}`}></button>
+						);
 					})}
 				</div>
 			</div>

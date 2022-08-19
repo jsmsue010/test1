@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { path } from '../main/Main_content';
 
-function Brand_member() {
+function BC_member() {
 	const [members, setMember] = useState([]);
 	useEffect(() => {
 		axios
@@ -10,26 +10,24 @@ function Brand_member() {
 			.then((json) => setMember(json.data.data));
 	}, []);
 
-	//console.log(member);
-
 	return (
-		<div className='member'>
-			<div className='list'>
-				<p>MEMBER</p>
+		<>
+			<h2>MEMBER</h2>
+			<ul className='list'>
 				{members.map((a, idx) => {
 					return (
-						<article key={idx}>
+						<li key={idx}>
 							<img src={`${path}/img/${a.pic}`} alt='' />
 							<div className='box'>
 								<p>{a.name}</p>
 								<p>{a.position}</p>
 							</div>
-						</article>
+						</li>
 					);
 				})}
-			</div>
-		</div>
+			</ul>
+		</>
 	);
 }
 
-export default Brand_member;
+export default BC_member;

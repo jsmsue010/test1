@@ -9,25 +9,28 @@ export const path = process.env.PUBLIC_URL;
 
 function Main_content() {
 	return (
-		<div className='inner'>
-			<section className='brandInfo1' tabIndex={0}>
-				<MC_section1 />
-			</section>
+		<article className='main'>
+			<h1 className='hidden'>main page</h1>
+			<div className='inner'>
+				<section className='brandInfo1' tabIndex={0}>
+					<MC_section1 />
+				</section>
 
-			<section className='brandInfo2' tabIndex={0}>
-				<MC_section2 />
-			</section>
+				<section className='brandInfo2' tabIndex={0}>
+					<MC_section2 />
+				</section>
 
-			<section className='brandInfo3' tabIndex={0}>
-				<MC_section3 />
-			</section>
+				<section className='brandInfo3' tabIndex={0}>
+					<MC_section3 />
+				</section>
 
-			<MC_slogan />
+				<MC_slogan />
 
-			<section className='brandInfo4' tabIndex={0}>
-				<MC_section4 />
-			</section>
-		</div>
+				<section className='brandInfo4' tabIndex={0}>
+					<MC_section4 />
+				</section>
+			</div>
+		</article>
 	);
 }
 

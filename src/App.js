@@ -55,6 +55,11 @@ function App() {
 			<Switch>
 				<Route exact path='/' component={Layout}></Route>
 				<Route exact path='/brand' component={Layout}></Route>
+				<Route exact path='/product' component={Layout}></Route>
+				<Route exact path='/board' component={Layout}></Route>
+				<Route exact path='/sign_up' component={Layout}></Route>
+				<Route exact path='/youtube' component={Layout}></Route>
+				<Route exact path='/gallery' component={Layout}></Route>
 			</Switch>
 		</div>
 	);

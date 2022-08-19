@@ -1,0 +1,180 @@
+.youtube {
+	width: 100%;
+
+	.inner {
+		width: 1280px;
+		margin: 0 auto;
+		position: relative;
+
+		.advertisement {
+			display: flex;
+			margin-top: 15vmin;
+			height: 80vh;
+
+			h2 {
+				width: 35%;
+				padding-right: 5%;
+				font: bold 60px/1.5 'Poppins';
+			}
+			p {
+				position: absolute;
+				top: 20vmin;
+				width: 55%;
+				font: 24px/1.5 'Poppins';
+			}
+			.advs {
+				flex: 2;
+				position: relative;
+
+				.adv-box {
+					position: relative;
+					overflow: hidden;
+					border: 3px solid #222;
+					width: 40%;
+					height: 300px;
+
+					&:nth-of-type(1) {
+						margin-top: 5%;
+						margin-left: 35%;
+						height: 400px;
+					}
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 25vmin;
+						left: 60%;
+						z-index: -2;
+					}
+					&:nth-of-type(3) {
+						position: absolute;
+						width: 60%;
+						top: 35vmin;
+						left: -20%;
+						z-index: -3;
+					}
+
+					img {
+						position: absolute;
+						top: -25%;
+						width: 100%;
+						height: 150%;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+		.sponsorship {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			h2 {
+				text-align: right;
+				font: bold 60px/1.5 'Poppins';
+				padding-top: 10vmin;
+			}
+			p {
+				text-align: right;
+				font: 24px/1.5 'Poppins';
+			}
+			.sps-box {
+				display: inline-block;
+				overflow: hidden;
+				border: 3px solid #222;
+
+				&:nth-of-type(1) {
+					position: absolute;
+					top: 0;
+					width: 55%;
+					height: 400px;
+				}
+				&:nth-of-type(2) {
+					position: absolute;
+					top: 430px;
+					left: 15%;
+					width: 30%;
+					height: 350px;
+				}
+				&:nth-of-type(3) {
+					position: absolute;
+					top: 480px;
+					left: 48%;
+					width: 50%;
+					height: 400px;
+				}
+
+				img {
+					position: absolute;
+					top: -25%;
+					width: 100%;
+					height: 150%;
+					object-fit: cover;
+				}
+			}
+		}
+		.photos {
+			margin: 15vmin 0;
+			.frame {
+				width: 90%;
+				padding: 0 1vmin;
+				margin-left: 8%;
+				position: relative;
+				span {
+					font: italic 4vmin/1 'Lora';
+					position: absolute;
+					top: -7vmin;
+					right: 0;
+					&::before {
+						content: '';
+						display: block;
+						width: 150%;
+						height: 1px;
+						background-color: #333;
+						position: absolute;
+						right: 0;
+						top: -1vmin;
+					}
+				}
+				.pics {
+					width: 100%;
+					overflow: hidden;
+					position: relative;
+					.slide {
+						position: relative;
+						width: calc((100% / 3) * 7);
+						//	margin-left: calc((100% / -3) * 2);
+						img {
+							width: calc(100% / 7);
+							height: 30vmin;
+							padding: 0 0.5vmin;
+						}
+					}
+					.play,
+					.stop {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						display: none;
+						font: bold 7vmin/1 'Poppins';
+						color: #fff;
+					}
+				}
+				.prev {
+					position: absolute;
+					top: 50%;
+					left: -5vmin;
+					transform: translate(0%, -50%);
+					color: #666;
+					font: bold 5vmin/1 'Poppins';
+				}
+				.next {
+					position: absolute;
+					top: 50%;
+					right: -5vmin;
+					transform: translate(0%, -50%);
+					color: #666;
+					font: bold 5vmin/1 'Poppins';
+				}
+			}
+		}
+	}
+}

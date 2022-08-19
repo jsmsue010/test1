@@ -1,93 +1,1022 @@
-.mapCompo {
-	width: 70%;
-	margin: 20vmin auto;
-	> span {
-		font: bold 4vmin/1 'Poppins';
-	}
-	.wrap {
-		width: 100%;
+.brand {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	.inner {
+		width: 1280px;
 		position: relative;
-		margin-top: 5vmin;
-		font-size: 0;
-		#map1 {
-			display: inline-block;
-			width: 55%;
-			height: 40vmin;
-			filter: grayscale(0.7);
-			z-index: 2;
-		}
-		.txt {
-			text-align: center;
-			display: inline-block;
-			width: 55%;
-			height: calc(40vmin + 4vmin);
-			background: #222;
-			color: #ddd;
-			position: absolute;
-			top: 4vmin;
-			right: 0%;
-			font: 2vmin/1 'Poppins';
+		margin: 0 auto;
+		padding: 2vmin;
+		margin-top: 30vmin;
+
+		.about {
 			h1 {
-				margin: 3vmin 0vmin 2vmin 5vmin;
+				text-align: center;
+				font: bold 50px/1 'Poppins';
+				margin-bottom: 10vmin;
 			}
-			.location {
-				width: 60%;
-				margin-left: 30%;
-				margin-bottom: 1vmin;
-				text-align: left;
-				p {
-					margin-bottom: 1vmin;
-				}
-			}
-			form {
-				width: 70%;
-				margin-left: 25%;
-				fieldset {
-					border: none;
-					position: relative;
-				}
-				.h {
-					opacity: 0;
-				}
-				table {
-					width: 90%;
-					th {
-						width: 30%;
+
+			.story {
+				svg {
+					display: block;
+					width: 100%;
+					width: 45vmin;
+					height: 40vmin;
+					margin: 0 auto;
+					svg path {
+						fill: transparent;
+						stroke: #444;
+						stroke-width: 3;
+						stroke-dasharray: 1871;
+						stroke-dashoffset: 1871;
+						transition: stroke-dashoffset 1s, fill 1s 1s;
+						&.on {
+							stroke-dashoffset: 0;
+							fill: #444;
+						}
 					}
 				}
-				input[type='text'] {
-					width: 100%;
-					height: 3vmin;
-					font: 1.5vmin/1 'Poppins';
-					margin: 1vmin 0;
+				p.intro {
+					display: block;
+					text-align: center;
+					font: italic 24px/1.5 'Poppins';
+					color: #222;
+					width: 50%;
+					margin: 5vmin auto;
 				}
-				select {
-					margin: 1vmin 0;
-					height: 3vmin;
-					width: 100%;
+			}
+
+			.features {
+				margin-top: 10vmin;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
 				}
-				input[type='submit'] {
-					margin-top: 2vmin;
-					width: 90%;
-					height: 5vmin;
+				.box {
+					width: 33%;
+					margin-right: 0.5%;
+					float: left;
+					&:nth-of-type(3) {
+						margin-right: 0;
+					}
+					h2 {
+						text-align: center;
+						font: 28px/1.5 'Poppins';
+						color: #333;
+					}
+					p {
+						width: 90%;
+						margin: 0 auto;
+						font: 16px/1.2 'poppins';
+						color: #444;
+					}
+					img {
+						width: 100%;
+						height: 30vmin;
+						object-fit: cover;
+						filter: grayscale(0.5);
+						transition: 0.3s;
+						&:hover {
+							filter: brightness(1.2);
+						}
+					}
+				}
+			}
+		}
+
+		.member {
+			width: 80%;
+			margin: 30vmin auto 0;
+			h2 {
+				font: bold 32px/1 'Poppins';
+				margin-bottom: 5vmin;
+			}
+			.list {
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				li {
+					position: relative;
+					width: 33%;
+					height: 33vh;
+					margin-right: 0.5%;
+					margin-bottom: 0.5vh;
+					float: left;
+
+					&:nth-of-type(1) {
+						height: 100vh;
+					}
+					&:nth-of-type(3),
+					&:nth-of-type(5),
+					&:nth-of-type(6) {
+						margin-right: 0;
+					}
+					&:nth-last-child(1) {
+						width: 66.5%;
+					}
+					&:hover {
+						img {
+							opacity: 0.9;
+						}
+						.box {
+							opacity: 1;
+						}
+					}
+
+					img {
+						width: 100%;
+						height: 100%;
+						filter: grayscale(0.4);
+						object-fit: cover;
+						transition: 0.3s;
+					}
+					.box {
+						width: 80%;
+						position: absolute;
+						top: 20px;
+						left: 20px;
+						opacity: 0;
+						font: 22px/1 'arial';
+						transition: 1s;
+					}
+				}
+			}
+		}
+
+		.team {
+			position: relative;
+			.wrap {
+				width: 100%;
+				display: flex;
+				margin: 10vmin 0;
+				position: relative;
+				&::after {
+					display: block;
 					position: absolute;
-					left: 0;
+					top: 50%;
+					right: 0%;
+					transform: translateY(-50%);
+					content: '';
+					width: 100vw;
+					height: 60vh;
+					background-color: #efefef;
+					z-index: -1;
+				}
+				.intro {
+					width: 45%;
+					height: 40vmin;
+					h2 {
+						text-align: center;
+						margin-top: 10vmin;
+						margin-bottom: 4vmin;
+						font: bold 32px/1 'Poppins';
+					}
+					p {
+						font: 20px/1.5 'Lora';
+						width: 70%;
+						margin: 5vmin auto;
+					}
+				}
+				.swiper {
+					width: 50%;
+					height: 50vmin;
+					margin-left: 0;
+					font-size: 0;
+					.swiper-slide {
+						height: 80%;
+						box-sizing: border-box;
+						position: relative;
+						margin: auto;
+						&:hover {
+							background-color: transparent;
+							h3 {
+								opacity: 1;
+								color: black;
+							}
+							img {
+								opacity: 0.5;
+							}
+						}
+						img {
+							width: 100%;
+							height: 100%;
+							padding: 0 10%;
+							object-fit: cover;
+						}
+						> h3 {
+							width: 100%;
+							position: absolute;
+							top: 50%;
+							transform: translateY(-50%);
+							font: bold 32px/1 'Poppins';
+							text-align: center;
+							opacity: 0;
+							z-index: 2;
+						}
+					}
+				}
+			}
+		}
+		.teamWork {
+			width: 100%;
+			position: relative;
+			&::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			> .box {
+				width: 33%;
+				margin-right: 0.5%;
+				float: left;
+				&:nth-of-type(3) {
+					margin-right: 0;
+				}
+				p {
+					width: 90%;
+					margin: 0 auto;
+					font: italic 24px/1.5 'poppins';
+					text-align: center;
+					color: #333;
+				}
+				img {
+					width: 100%;
+					height: 30vmin;
+					object-fit: cover;
+					filter: grayscale(0.5);
+					transition: 0.3s;
+					&:hover {
+						filter: brightness(1.2);
+					}
+				}
+			}
+		}
+		.map {
+			h2 {
+				width: 90%;
+				font: bold 32px/1 'Poppins';
+				margin: 20vmin auto 5vmin;
+			}
+			.mapCompo {
+				width: 90%;
+				margin: 0 auto;
+				position: relative;
+				font-size: 0;
+				padding-bottom: 20vmin;
+
+				#map1 {
+					display: inline-block;
+					width: 55%;
+					height: 40vmin;
+					filter: grayscale(0.7);
+					z-index: 2;
+				}
+				.txt {
+					text-align: center;
+					display: inline-block;
+					width: 55%;
+					height: calc(40vmin + 4vmin);
+					background: #222;
+					color: #ddd;
+					position: absolute;
+					top: 4vmin;
+					right: 0%;
+					font: 18px/1 'Poppins';
+					h3 {
+						margin: 3vmin 0vmin 2vmin 5vmin;
+						font: 26px/1 'Poppins';
+					}
+					.location {
+						width: 60%;
+						margin-left: 30%;
+						margin-bottom: 1vmin;
+						text-align: left;
+						p {
+							margin-bottom: 1vmin;
+						}
+					}
+					form {
+						width: 70%;
+						margin-left: 25%;
+						fieldset {
+							border: none;
+							position: relative;
+						}
+						.h {
+							opacity: 0;
+						}
+						table {
+							width: 90%;
+							th {
+								width: 30%;
+							}
+						}
+						input[type='text'] {
+							width: 100%;
+							height: 3vmin;
+							font: 22px/1.3 'Poppins';
+							margin: 1vmin 0;
+						}
+						select {
+							margin: 1vmin 0;
+							height: 3vmin;
+							width: 100%;
+						}
+						input[type='submit'] {
+							margin-top: 2vmin;
+							width: 90%;
+							height: 5vmin;
+							position: absolute;
+							left: 0;
+						}
+					}
+				}
+
+				.btnBox {
+					width: 55%;
+					text-align: left;
+					position: relative;
+					z-index: 2;
+					button {
+						width: 25%;
+						height: 5vmin;
+						border: none;
+						font: 18px/2 'Poppins';
+						cursor: pointer;
+						border-right: rgb(255, 255, 255) solid 1px;
+					}
 				}
 			}
 		}
 	}
-	.btnBox {
-		width: 55%;
-		text-align: left;
-		position: relative;
-		z-index: 2;
-		button {
-			width: 25%;
-			height: 5vmin;
-			border: none;
-			font: 1.5vmin/2 'Poppins';
-			cursor: pointer;
-			border-right: rgb(255, 255, 255) solid 1px;
+}
+
+@media screen and (max-width: 1279px) {
+	.brand {
+		.inner {
+			width: 90%;
+			padding: 0;
+
+			.about {
+				h1 {
+					text-align: center;
+					font: bold 50px/1 'Poppins';
+					margin-bottom: 10vmin;
+				}
+
+				.story {
+					/*
+					svg {
+						display: block;
+						width: 100%;
+						width: 45vmin;
+						height: 40vmin;
+						margin: 0 auto;
+						svg path {
+							fill: transparent;
+							stroke: #444;
+							stroke-width: 3;
+							stroke-dasharray: 1871;
+							stroke-dashoffset: 1871;
+							transition: stroke-dashoffset 1s, fill 1s 1s;
+							&.on {
+								stroke-dashoffset: 0;
+								fill: #444;
+							}
+						} 
+					}
+					*/
+					p.intro {
+						font: italic 24px/1.5 'Poppins';
+						width: 60%;
+						margin: 5vmin auto;
+					}
+				}
+
+				.features {
+					margin-top: 10vmin;
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					.box {
+						width: 33%;
+						margin-right: 0.5%;
+						float: left;
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+						h2 {
+							text-align: center;
+							font: 28px/1.5 'Poppins';
+							color: #333;
+						}
+						p {
+							width: 90%;
+							margin: 0 auto;
+							font: 16px/1.2 'poppins';
+							color: #444;
+						}
+						img {
+							width: 100%;
+							height: 30vmin;
+							object-fit: cover;
+							filter: grayscale(0.5);
+							transition: 0.3s;
+							&:hover {
+								filter: brightness(1.2);
+							}
+						}
+					}
+				}
+			}
+
+			.member {
+				width: 100%;
+				margin: 20vmin auto 0;
+				h2 {
+					font: bold 32px/1 'Poppins';
+					margin-bottom: 5vmin;
+				}
+				.list {
+					height: 80vmin;
+					li {
+						position: relative;
+						width: 33%;
+						height: 33%;
+						margin-right: 0.5%;
+						margin-bottom: 0.5%;
+
+						&:nth-of-type(1) {
+							height: 100%;
+						}
+						&:nth-of-type(3),
+						&:nth-of-type(5),
+						&:nth-of-type(6) {
+							margin-right: 0;
+						}
+						&:nth-last-child(1) {
+							width: 66.5%;
+						}
+						&:hover {
+							img {
+								opacity: 0.9;
+							}
+							.box {
+								opacity: 1;
+							}
+						}
+
+						img {
+							width: 100%;
+							height: 100%;
+							filter: grayscale(0.4);
+							object-fit: cover;
+							transition: 0.3s;
+						}
+						.box {
+							width: 80%;
+							position: absolute;
+							top: 20px;
+							left: 20px;
+							opacity: 0;
+							font: 22px/1 'arial';
+							transition: 1s;
+						}
+					}
+				}
+			}
+
+			.team {
+				position: relative;
+				.wrap {
+					margin: 10vmin 0;
+					&::after {
+						top: 50%;
+						right: 0%;
+						transform: translateY(-50%);
+						height: 60vmin;
+						width: 130vw;
+						left: calc((100vw - 60%) / -2);
+					}
+					.intro {
+						min-height: 40vmin;
+						h2 {
+							margin-top: 5vmin;
+							font: bold 32px/1 'Poppins';
+						}
+						p {
+							font: 22px/1.5 'Lora';
+							width: 95%;
+							margin: 5vmin auto 0;
+						}
+					}
+					.swiper {
+						width: 55%;
+						.swiper-slide {
+							height: 80%;
+							img {
+								padding: 0 15%;
+							}
+							> h3 {
+								top: 50%;
+								transform: translateY(-50%);
+								font: bold 24px/1 'Poppins';
+							}
+						}
+					}
+				}
+			}
+
+			.teamWork {
+				width: 100%;
+				position: relative;
+				> .box {
+					p {
+						font: italic 20px/1.5 'poppins';
+					}
+					img {
+						width: 100%;
+						height: 30vmin;
+					}
+				}
+			}
+
+			.map {
+				width: 100%;
+				position: relative;
+				h2 {
+					width: 90%;
+					font: bold 32px/1 'Poppins';
+					margin: 20vmin auto 5vmin;
+				}
+				.mapCompo {
+					width: 100%;
+					padding-bottom: 20vmin;
+
+					.txt {
+						font: 16px/1 'Poppins';
+						form {
+							input[type='text'] {
+								font: 16px/1.3 'Poppins';
+							}
+							select {
+								font: bold 16px/1.3 'Poppins';
+							}
+							input[type='submit'] {
+								font: bold 18px/1.3 'Poppins';
+							}
+						}
+					}
+
+					.btnBox {
+						width: 55%;
+						text-align: left;
+						position: relative;
+						z-index: 2;
+						button {
+							width: 25%;
+							height: 5vmin;
+							border: none;
+							font: 14px/2 'Poppins';
+							cursor: pointer;
+							border-right: rgb(255, 255, 255) solid 1px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 799px) {
+	.brand {
+		.inner {
+			margin-top: 20vmin;
+
+			.about {
+				h1 {
+					font: bold 36px/1.2 'Poppins';
+					width: 75%;
+					margin: 0 auto 10vmin;
+				}
+
+				.story {
+					/*
+					svg {
+						display: block;
+						width: 100%;
+						width: 45vmin;
+						height: 40vmin;
+						margin: 0 auto;
+						svg path {
+							fill: transparent;
+							stroke: #444;
+							stroke-width: 3;
+							stroke-dasharray: 1871;
+							stroke-dashoffset: 1871;
+							transition: stroke-dashoffset 1s, fill 1s 1s;
+							&.on {
+								stroke-dashoffset: 0;
+								fill: #444;
+							}
+						} 
+					}
+					*/
+					p.intro {
+						font: italic 20px/1.3 'Poppins';
+						width: 90%;
+					}
+				}
+
+				.features {
+					.box {
+						h2 {
+							font: bold 18px/1.5 'Poppins';
+						}
+						p {
+							display: none;
+						}
+					}
+				}
+			}
+
+			.member {
+				margin: 30vmin auto 0;
+				h2 {
+					font: bold 28px/1 'Poppins';
+				}
+				.list {
+					li {
+						.box {
+							top: 10px;
+							left: 10px;
+							font: 14px/1 'arial';
+						}
+					}
+				}
+			}
+
+			.team {
+				.wrap {
+					&::after {
+						height: 50vmin;
+					}
+					.intro {
+						h2 {
+							margin-bottom: 0vmin;
+							font: bold 28px/1 'Poppins';
+						}
+						p {
+							margin-top: 2vmin;
+							font: 3vmin/1.3 'Lora';
+						}
+					}
+					.swiper {
+						width: 55%;
+						height: 40vmin;
+						.swiper-slide {
+							> h3 {
+								font: bold 20px/1 'Poppins';
+							}
+						}
+						.swiper-pagination {
+							bottom: 6px;
+						}
+						.swiper-button-next,
+						.swiper-button-prev {
+							--swiper-navigation-size: 34px;
+						}
+					}
+				}
+			}
+
+			.teamWork {
+				width: 100%;
+				position: relative;
+				> .box {
+					p {
+						font: italic 18px/1.3 'poppins';
+						margin: 1vmin auto;
+					}
+				}
+			}
+
+			.map {
+				h2 {
+					width: 90%;
+					font: bold 28px/1 'Poppins';
+					margin: 20vmin auto 5vmin;
+				}
+				.mapCompo {
+					#map1 {
+						display: inline-block;
+						width: 100%;
+						height: 50vmin;
+						filter: grayscale(0.7);
+						z-index: 2;
+					}
+					.txt {
+						text-align: center;
+						width: 100%;
+						height: auto;
+						background: #fff;
+						color: #222;
+						border: 1px solid #222;
+						position: relative;
+						font: 16px/1 'Poppins';
+						h3 {
+							width: 100%;
+							font: bold 28px/1 'Poppins';
+							margin: 2vmin auto;
+						}
+						.location {
+							width: 70%;
+							margin: 0 auto 2vmin;
+							text-align: left;
+						}
+						form {
+							width: 100%;
+							margin: 0;
+							table {
+								width: 90%;
+								margin: 0 auto;
+								input[type='text'] {
+									width: 90%;
+									height: 26px;
+									font: 16px/1 'Poppins';
+									margin: 0 0 1vmin;
+									text-align: center;
+								}
+								select {
+									margin-top: 1vmin;
+									font: bold 16px/1 'Poppins';
+									height: 26px;
+									text-align: center;
+									width: 90%;
+								}
+							}
+							input[type='submit'] {
+								position: relative;
+								margin: 1vmin 0 3vmin;
+								width: 70%;
+								font: bold 20px/1 'Poppins';
+								height: 26px;
+								background: none;
+							}
+						}
+					}
+
+					.btnBox {
+						width: 100%;
+						text-align: left;
+						position: relative;
+						z-index: 2;
+						button {
+							width: 25%;
+							height: 8vmin;
+							border: none;
+							font: 16px/2 'Poppins';
+							cursor: pointer;
+							border-right: rgb(255, 255, 255) solid 1px;
+							&:nth-of-type(4) {
+								border-right: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 449px) {
+	.brand {
+		.inner {
+			margin-top: 20vmin;
+
+			.about {
+				h1 {
+					font: bold 7vmin/1.2 'Poppins';
+					width: 100%;
+				}
+
+				.story {
+					/*
+					svg {
+						display: block;
+						width: 100%;
+						width: 45vmin;
+						height: 40vmin;
+						margin: 0 auto;
+						svg path {
+							fill: transparent;
+							stroke: #444;
+							stroke-width: 3;
+							stroke-dasharray: 1871;
+							stroke-dashoffset: 1871;
+							transition: stroke-dashoffset 1s, fill 1s 1s;
+							&.on {
+								stroke-dashoffset: 0;
+								fill: #444;
+							}
+						} 
+					}
+					*/
+					p.intro {
+						font: italic 5vmin/1.3 'Poppins';
+						width: 100%;
+					}
+				}
+
+				.features {
+					width: 270%;
+					margin-top: 15vmin;
+					.box {
+						width: calc(100% / 3);
+						margin: 0;
+						img {
+							height: 50vmin;
+							padding: 0 5%;
+						}
+						h2 {
+							font: bold 18px/1.5 'Poppins';
+						}
+						p {
+							display: block;
+							text-align: center;
+							width: 90%;
+							margin: 2vmin auto;
+							font: 15px/1.3 'poppins';
+						}
+					}
+				}
+			}
+
+			.member {
+				h2 {
+					font: bold 22px/1 'Poppins';
+				}
+				.list {
+					li {
+						img {
+							padding: 0.5%;
+						}
+						.box {
+							font: 12px/1 'arial';
+						}
+					}
+				}
+			}
+
+			.team {
+				.wrap {
+					&::after {
+						top: 125%;
+						height: 180vmin;
+					}
+					.intro {
+						position: absolute;
+						width: 100%;
+						h2 {
+							margin-top: 3vmin;
+							margin-bottom: 0vmin;
+							font: bold 20px/1 'Poppins';
+						}
+						p {
+							width: 90%;
+							margin: 65vmin auto 0;
+							font: 4vmin/1.3 'Lora';
+						}
+					}
+					.swiper {
+						width: 100%;
+						height: 60vmin;
+						margin-top: 10vmin;
+						.swiper-slide {
+							> h3 {
+								font: bold 20px/1 'Poppins';
+							}
+						}
+						.swiper-pagination {
+							bottom: 0px;
+						}
+						.swiper-button-next,
+						.swiper-button-prev {
+							--swiper-navigation-size: 34px;
+						}
+					}
+				}
+			}
+
+			.teamWork {
+				position: relative;
+				width: 100%;
+				margin-top: 35vmin;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				> .box {
+					width: 90%;
+					background: white;
+					border-radius: 30px;
+					margin-left: 5%;
+					margin-bottom: 3%;
+					float: left;
+					display: flex;
+					&:nth-of-type(3) {
+						p {
+							margin-top: 5%;
+						}
+					}
+					p {
+						width: 70%;
+						margin: 8% 0 0;
+						font: italic 4vmin 'poppins';
+						text-align: center;
+						color: #333;
+					}
+					img {
+						width: 20vmin;
+						height: 20vmin;
+						border-radius: 50%;
+						object-fit: cover;
+						filter: grayscale(0.5);
+						transition: 0.3s;
+						padding: 5px;
+						&:hover {
+							filter: brightness(1.2);
+						}
+					}
+				}
+			}
+
+			.map {
+				h2 {
+					font: bold 22px/1 'Poppins';
+					margin: 30vmin auto 5vmin;
+				}
+				.mapCompo {
+					#map1 {
+						height: 70vmin;
+					}
+					.txt {
+						font: 14px/1 'Poppins';
+						h3 {
+							width: 100%;
+							font: bold 20px/1 'Poppins';
+							margin: 2vmin auto;
+						}
+						.location {
+							width: 80%;
+							margin: 0 auto 2vmin;
+							text-align: left;
+						}
+						form {
+							width: 100%;
+							margin: 0;
+							table {
+								width: 90%;
+								margin: 0 auto;
+								input[type='text'] {
+									width: 90%;
+									height: 26px;
+									font: 14px/1 'Poppins';
+									margin: 0 0 1vmin;
+									text-align: center;
+								}
+								select {
+									margin-top: 1vmin;
+									font: bold 14px/1 'Poppins';
+									height: 26px;
+									text-align: center;
+									width: 90%;
+								}
+							}
+							input[type='submit'] {
+								position: relative;
+								margin: 1vmin 0 3vmin;
+								width: 70%;
+								font: bold 18px/1 'Poppins';
+								height: 26px;
+								background: none;
+							}
+						}
+					}
+
+					.btnBox {
+						button {
+							font: 12px/2 'Poppins';
+						}
+					}
+				}
+			}
 		}
 	}
 }

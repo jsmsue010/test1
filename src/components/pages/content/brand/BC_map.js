@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { path } from '../main/Main_content';
 
-function Brand_map() {
+function BC_map() {
 	const container = useRef(null);
 	const { kakao } = window; //윈도우 전역객체에서 카카오객체를 직접찾아서 변수에 할당.
 	const [traffic, setTraffic] = useState(false);
@@ -71,10 +70,11 @@ function Brand_map() {
 		}
 	};
 	return (
-		<div className='mapCompo'>
-			<span>MAP</span>
-			<div className='wrap'>
+		<>
+			<h2>MAP</h2>
+			<div className='mapCompo'>
 				<div id='map1' ref={container}></div>
+
 				<div className='btnBox'>
 					<button
 						onClick={() => (traffic ? setTraffic(false) : setTraffic(true))}>
@@ -93,9 +93,9 @@ function Brand_map() {
 					))}
 				</div>
 				<div className='txt' tabIndex={0}>
-					<h1>CONTACT US</h1>
+					<h3>CONTACT US</h3>
 					<div className='location'>
-						<p>address : Lorem ipsum dolor sit consectetur adipisicin 05645</p>
+						<p>Lorem ipsum dolor sit consectetur adipisicin 05645</p>
 						<p>TEL :+82-2-22-2220-2114</p>
 					</div>
 					<form action='#'>
@@ -152,8 +152,8 @@ function Brand_map() {
 					</form>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 
-export default Brand_map;
+export default BC_map;

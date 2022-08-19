@@ -76,7 +76,7 @@ function MC_section2() {
 						return (
 							<div
 								className='section2-article'
-								role='article'
+								//role='article'
 								draggable='true'
 								key={idx}
 								tabIndex={0}>

@@ -1,0 +1,1118 @@
+.sign-up {
+	width: 100%;
+	font-family: 'Poppins';
+	font-size: 2vmin;
+	margin-bottom: 5vmin;
+
+	h1 {
+		text-align: center;
+		font: bold 50px/1 'Poppins';
+		margin-top: 10vmin;
+	}
+
+	.inner {
+		width: 1280px;
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+
+		.h {
+			opacity: 0;
+			position: absolute;
+			top: -99999;
+		}
+		span {
+			display: block;
+			font: 1.5vmin/1 'Poppins';
+		}
+
+		.welcome {
+			.welcome_box {
+				width: 18vmin;
+				display: inline-block;
+				margin: 5vmin 4% 8vmin 0;
+				&:nth-of-type(3) {
+					margin-right: 0;
+				}
+				.circle {
+					clip-path: circle(50% at 50% 50%);
+					width: 100%;
+					height: 18vmin;
+					background-color: #444;
+					color: white;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				p {
+					margin-top: 2.5vmin;
+					width: 100%;
+					color: #444;
+					font: 2vmin/1.2 'Lora';
+				}
+			}
+		}
+
+		form {
+			width: 100%;
+			position: relative;
+			fieldset {
+				border: none;
+			}
+
+			.wrapper1 {
+				width: 100%;
+				display: flex;
+				flex-direction: row-reverse;
+				background: #f8f5f0;
+				h2 {
+					position: absolute;
+					left: 25%;
+					padding-top: 3vmin;
+				}
+				span {
+					font: 1.5vmin/1.35 'Poppins';
+					color: rgb(105, 13, 13);
+					margin-top: 10px;
+				}
+				.wrap {
+					width: 50%;
+					padding: 10vmin 5% 5% 0%;
+					textarea {
+						width: 100%;
+						height: 45vmin;
+						padding: 2vmin;
+						resize: none;
+						font: normal 1.5vmin/1.5 'Poppins';
+						margin-bottom: 3vmin;
+					}
+					.agreement {
+						text-align: center;
+						label[for='agreement'] {
+							font: 1.7vmin/1 'Poppins';
+							input[type='checkbox'] {
+								margin-right: 1vmin;
+							}
+						}
+					} //input[[type='radio'] 이런 식으로 input태그도 선택할 수 있다. 속성으로 찾는거는 [] 안에 쓰기.
+				}
+				table {
+					width: 50%;
+					margin: 10vmin 8vmin 5vmin;
+					padding: 50px;
+					text-align: left;
+					border-collapse: collapse;
+					font: 1.5vmin/1 'Poppins';
+					tr {
+						width: 100%;
+						border-bottom: 1px solid #ddd;
+						&:nth-of-type(1) {
+							border-top: 1px solid #ddd;
+						}
+						th {
+							width: 25%;
+							padding-left: 2vmin;
+							font: bold 1.5vmin/1 'Poppins';
+						}
+						td {
+							padding: 10px 0 10px 0px;
+							#id,
+							#pwd1,
+							#pwd2 {
+								width: 100%;
+								height: 3vmin;
+								font: 1.5vmin/1 'Poppins';
+							}
+							#name {
+								width: 50%;
+							}
+							#birth {
+								width: 70%;
+								font: 1.5vmin/1 'Poppins';
+							}
+							#address {
+								width: 70%;
+								font: 1.5vmin/1 'Poppins';
+							}
+							#address2 {
+								width: 100%;
+								font: 1.5vmin/1 'Poppins';
+							}
+							button {
+								margin: 0 10px;
+								padding: 2px 5px;
+								font-size: 1.5vmin;
+							}
+							select {
+								font: 1.5vmin/1 'Poppins';
+								padding: 2px;
+							}
+							#phone2,
+							#phone3 {
+								width: 35%;
+								font: 1.5vmin/1 'Poppins';
+							}
+							#email {
+								width: 100%;
+								font: 1.5vmin/1 'Poppins';
+							}
+							label[for='sms1'],
+							label[for='sms2'] {
+								margin-right: 10px;
+							}
+						}
+					}
+					input[type='text'] {
+						font: 2vmin 'arial';
+						height: 3vmin;
+						padding-left: 1vmin;
+						border: none;
+					}
+					input[type='radio'] {
+						font: 1.5vmin 'arial';
+						margin-right: 0.5vmin;
+						&:nth-of-type(2) {
+							margin-left: 1.5vmin;
+						}
+					}
+				}
+			}
+
+			.wrapper2 {
+				position: relative;
+				display: flex;
+				text-align: left;
+				background: #f8f5f0;
+				h2 {
+					position: absolute;
+					left: 70%;
+					top: 4vmin;
+					transform: translateX(-50%);
+				}
+
+				table {
+					width: 60%;
+					margin: 10vmin 8vmin 20vmin;
+					border-collapse: collapse;
+					font: 1.5vmin 'Poppins';
+
+					tr {
+						border-bottom: 1px solid #ddd;
+						&:nth-of-type(1) {
+							border-top: 1px solid #ddd;
+							border-bottom: none;
+							td {
+								padding-top: 10px;
+							}
+						}
+						&:last-child {
+							border-bottom: none;
+						}
+						th {
+							width: 25%;
+							padding-left: 2vmin;
+						}
+						td {
+							padding: 10px 0px;
+						}
+						button {
+							margin: 0 10px;
+							padding: 2px;
+							font: 1.5vmin 'arial';
+						}
+						select {
+							font: 1.5vmin/1 'Poppins';
+							margin-left: 3vmin;
+						}
+						input[type='text'] {
+							width: 60%;
+							margin-left: 1vmin;
+							font: 1.5vmin 'arial';
+							height: 3vmin;
+							border: none;
+						}
+						input[type='radio'] {
+							font: 2.5vmin 'arial';
+							margin-left: 10px;
+						}
+						& #submit {
+							position: absolute;
+							bottom: 5vmin;
+							background: #a7a39e;
+							right: 50%;
+							color: white;
+							margin: 0 10px;
+							border: none;
+							padding: 10px;
+						}
+						& #reset {
+							position: absolute;
+							bottom: 5vmin;
+							background: #a7a39e;
+							left: 50%;
+							color: white;
+							margin: 0 10px;
+							border: none;
+							padding: 10px;
+						}
+					}
+				}
+
+				.pic {
+					width: 50%;
+					font-size: 0;
+					margin-bottom: 20vmin;
+					img {
+						width: 100%;
+						height: 40vmin;
+						padding-top: 5vmin;
+						padding-left: 8vmin;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+@media screen and(max-width:1599px) {
+	.sign-up {
+		.inner {
+			width: 100%;
+		}
+	}
+}
+
+@media screen and(max-width:1179px) {
+	.sign-up {
+		width: 100%;
+		font-family: 'Poppins';
+		font-size: 2vmin;
+		margin-bottom: 5vmin;
+
+		.inner {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			text-align: center;
+
+			.h {
+				opacity: 0;
+				position: absolute;
+				top: -99999;
+			}
+			span {
+				display: block;
+				font: 1.5vmin/1 'Poppins';
+			}
+
+			.wrap {
+				width: 100%;
+				h1 {
+					margin-top: 15vmin;
+					margin-bottom: 5vmin;
+					font: bold 5vmin/1 'Poppins';
+				}
+
+				article.welcome_box {
+					width: 18vmin;
+					display: inline-block;
+					margin: 5vmin 4% 8vmin 0;
+					&:nth-of-type(3) {
+						margin-right: 0;
+					}
+					.circle {
+						clip-path: circle(50% at 50% 50%);
+						width: 100%;
+						height: 18vmin;
+						background-color: #444;
+						color: white;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+					p {
+						margin-top: 2.5vmin;
+						width: 100%;
+						color: #444;
+						font: 2vmin/1.2 'Lora';
+					}
+				}
+
+				form {
+					width: 100%;
+					position: relative;
+					fieldset {
+						border: none;
+					}
+
+					.wrapper1 {
+						width: 100%;
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						background: #f8f5f0;
+						h2 {
+							position: absolute;
+							left: 50%;
+							transform: translateX(-50%);
+							padding-top: 3vmin;
+						}
+						span {
+							font: 16px/1.35 'Poppins';
+							color: rgb(105, 13, 13);
+							margin-top: 10px;
+						}
+						.wrap {
+							width: 100%;
+							padding: 10vmin 10vmin 0;
+							textarea {
+								width: 100%;
+								height: 45vmin;
+								padding: 2vmin;
+								resize: none;
+								font: normal 20px/1.5 'Poppins';
+								margin-bottom: 3vmin;
+							}
+							.agreement {
+								text-align: center;
+								label[for='agreement'] {
+									font: 20px/1 'Poppins';
+									input[type='checkbox'] {
+										margin-right: 1vmin;
+									}
+								}
+							} //input[[type='radio'] 이런 식으로 input태그도 선택할 수 있다. 속성으로 찾는거는 [] 안에 쓰기.
+						}
+						table {
+							width: 100%;
+							margin: 5vmin 8vmin 5vmin;
+							padding: 50px;
+							text-align: left;
+							border-collapse: collapse;
+							font: 20px/1 'Poppins';
+							tr {
+								width: 100%;
+								border-bottom: 1px solid #ddd;
+								&:nth-of-type(1) {
+									border-top: 1px solid #ddd;
+								}
+								th {
+									width: 25%;
+									padding-left: 2vmin;
+									font: bold 20px/1 'Poppins';
+								}
+								td {
+									padding: 10px 0 10px 0px;
+									#id,
+									#pwd1,
+									#pwd2 {
+										width: 100%;
+										height: 30px;
+										font: 20px/1 'Poppins';
+									}
+									#name {
+										width: 50%;
+									}
+									#birth {
+										width: 70%;
+										font: 20px/1 'Poppins';
+									}
+									#address {
+										width: 70%;
+										font: 20px/1 'Poppins';
+									}
+									#address2 {
+										width: 100%;
+										font: 20px/1 'Poppins';
+									}
+									button {
+										margin: 0 10px;
+										padding: 2px 5px;
+										font-size: 20px;
+									}
+									select {
+										font: 20px/1 'Poppins';
+										padding: 2px;
+									}
+									#phone2,
+									#phone3 {
+										width: 35%;
+										font: 20px/1 'Poppins';
+									}
+									#email {
+										width: 100%;
+										font: 20px/1 'Poppins';
+									}
+									label[for='sms1'],
+									label[for='sms2'] {
+										margin-right: 10px;
+									}
+								}
+							}
+							input[type='text'] {
+								font: 2vmin 'arial';
+								height: 30px;
+								padding-left: 1vmin;
+								border: none;
+							}
+							input[type='radio'] {
+								font: 20px 'arial';
+								margin-right: 0.5vmin;
+								&:nth-of-type(2) {
+									margin-left: 1.5vmin;
+								}
+							}
+						}
+					}
+
+					.wrapper2 {
+						position: relative;
+						display: flex;
+						text-align: left;
+						background: #f8f5f0;
+						h2 {
+							position: absolute;
+							left: 70%;
+							top: 4vmin;
+							transform: translateX(-50%);
+						}
+
+						table {
+							width: 60%;
+							margin: 10vmin 4vmin 20vmin;
+							border-collapse: collapse;
+							font: 20px 'Poppins';
+
+							tr {
+								border-bottom: 1px solid #ddd;
+								&:nth-of-type(1) {
+									border-top: 1px solid #ddd;
+									border-bottom: none;
+									td {
+										padding-top: 10px;
+									}
+								}
+								&:last-child {
+									border-bottom: none;
+								}
+								th {
+									width: 30%;
+									padding-left: 2vmin;
+								}
+								td {
+									padding: 10px 0px;
+								}
+								button {
+									margin: 0 10px;
+									padding: 5px;
+									font: 16px/1 'arial';
+								}
+								select {
+									font: 20px/1 'Poppins';
+									margin: 0 5px;
+								}
+								input[type='text'] {
+									width: 60%;
+									margin: 0 5px;
+									font: 20px/1 'arial';
+									height: 30px;
+									border: none;
+								}
+								input[type='radio'] {
+									font: 20px 'arial';
+									margin-left: 10px;
+								}
+								& #submit {
+									position: absolute;
+									bottom: 5vmin;
+									background: #a7a39e;
+									right: 50%;
+									color: white;
+									margin: 0 10px;
+									border: none;
+									padding: 10px;
+								}
+								& #reset {
+									position: absolute;
+									bottom: 5vmin;
+									background: #a7a39e;
+									left: 50%;
+									color: white;
+									margin: 0 10px;
+									border: none;
+									padding: 10px;
+								}
+							}
+						}
+
+						.pic {
+							width: 50%;
+							font-size: 0;
+							margin-bottom: 20vmin;
+							img {
+								width: 100%;
+								height: 100%;
+								padding-top: 5vmin;
+								padding-left: 4vmin;
+								object-fit: cover;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width:849px) {
+	.sign-up {
+		width: 100%;
+		font-family: 'Poppins';
+		font-size: 2vmin;
+		margin-bottom: 5vmin;
+
+		.inner {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			text-align: center;
+
+			.h {
+				opacity: 0;
+				position: absolute;
+				top: -99999;
+			}
+			span {
+				display: block;
+				font: 1.5vmin/1 'Poppins';
+			}
+
+			.wrap {
+				width: 100%;
+				h1 {
+					margin-top: 15vmin;
+					margin-bottom: 5vmin;
+					font: bold 5vmin/1 'Poppins';
+				}
+
+				article.welcome_box {
+					width: 18vmin;
+					display: inline-block;
+					margin: 5vmin 4% 8vmin 0;
+					&:nth-of-type(3) {
+						margin-right: 0;
+					}
+					.circle {
+						clip-path: circle(50% at 50% 50%);
+						width: 100%;
+						height: 18vmin;
+						background-color: #444;
+						color: white;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+					p {
+						margin-top: 2.5vmin;
+						width: 100%;
+						color: #444;
+						font: 2vmin/1.2 'Lora';
+					}
+				}
+
+				form {
+					width: 100%;
+					position: relative;
+					fieldset {
+						border: none;
+					}
+
+					.wrapper1 {
+						width: 100%;
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						background: #f8f5f0;
+						h2 {
+							position: absolute;
+							left: 50%;
+							transform: translateX(-50%);
+							padding-top: 3vmin;
+						}
+						span {
+							font: 16px/1.35 'Poppins';
+							color: rgb(105, 13, 13);
+							margin-top: 10px;
+						}
+						.wrap {
+							width: 100%;
+							padding: 10vmin 10vmin 0;
+							textarea {
+								width: 100%;
+								height: 45vmin;
+								padding: 2vmin;
+								resize: none;
+								font: normal 20px/1.5 'Poppins';
+								margin-bottom: 3vmin;
+							}
+							.agreement {
+								text-align: center;
+								label[for='agreement'] {
+									font: 20px/1 'Poppins';
+									input[type='checkbox'] {
+										margin-right: 1vmin;
+									}
+								}
+							} //input[[type='radio'] 이런 식으로 input태그도 선택할 수 있다. 속성으로 찾는거는 [] 안에 쓰기.
+						}
+						table {
+							width: 100%;
+							margin: 5vmin 8vmin 5vmin;
+							padding: 50px;
+							text-align: left;
+							border-collapse: collapse;
+							font: 20px/1 'Poppins';
+							tr {
+								width: 100%;
+								border-bottom: 1px solid #ddd;
+								&:nth-of-type(1) {
+									border-top: 1px solid #ddd;
+								}
+								th {
+									width: 25%;
+									padding-left: 2vmin;
+									font: bold 20px/1 'Poppins';
+								}
+								td {
+									padding: 10px 0 10px 0px;
+									#id,
+									#pwd1,
+									#pwd2 {
+										width: 100%;
+										height: 30px;
+										font: 20px/1 'Poppins';
+									}
+									#name {
+										width: 50%;
+									}
+									#birth {
+										width: 70%;
+										font: 20px/1 'Poppins';
+									}
+									#address {
+										width: 70%;
+										font: 20px/1 'Poppins';
+									}
+									#address2 {
+										width: 100%;
+										font: 20px/1 'Poppins';
+									}
+									button {
+										margin: 0 10px;
+										padding: 2px 5px;
+										font-size: 20px;
+									}
+									select {
+										font: 20px/1 'Poppins';
+										padding: 2px;
+									}
+									#phone2,
+									#phone3 {
+										width: 35%;
+										font: 20px/1 'Poppins';
+									}
+									#email {
+										width: 100%;
+										font: 20px/1 'Poppins';
+									}
+									label[for='sms1'],
+									label[for='sms2'] {
+										margin-right: 10px;
+									}
+								}
+							}
+							input[type='text'] {
+								font: 2vmin 'arial';
+								height: 30px;
+								padding-left: 1vmin;
+								border: none;
+							}
+							input[type='radio'] {
+								font: 20px 'arial';
+								margin-right: 0.5vmin;
+								&:nth-of-type(2) {
+									margin-left: 1.5vmin;
+								}
+							}
+						}
+					}
+
+					.wrapper2 {
+						h2 {
+							position: absolute;
+							left: 50%;
+							top: 3vmin;
+							transform: translateX(-50%);
+						}
+						table {
+							width: 100%;
+							margin: 10vmin 8vmin 20vmin;
+							border-collapse: collapse;
+							font: 20px 'Poppins';
+
+							tr {
+								border-bottom: 1px solid #ddd;
+								&:nth-of-type(1) {
+									border-top: 1px solid #ddd;
+									border-bottom: none;
+									td {
+										padding-top: 10px;
+									}
+								}
+								&:last-child {
+									border-bottom: none;
+								}
+								th {
+									width: 30%;
+									padding-left: 2vmin;
+								}
+								td {
+									padding: 10px 0px;
+								}
+								button {
+									margin: 0 10px;
+									padding: 5px;
+									font: 16px/1 'arial';
+								}
+								select {
+									font: 20px/1 'Poppins';
+									margin: 0 5px;
+								}
+								input[type='text'] {
+									width: 60%;
+									margin: 0 5px;
+									font: 20px/1 'arial';
+									height: 30px;
+									border: none;
+								}
+								input[type='radio'] {
+									font: 20px 'arial';
+									margin-left: 10px;
+								}
+								& #submit {
+									position: absolute;
+									bottom: 5vmin;
+									background: #a7a39e;
+									right: 50%;
+									color: white;
+									margin: 0 10px;
+									border: none;
+									padding: 10px;
+								}
+								& #reset {
+									position: absolute;
+									bottom: 5vmin;
+									background: #a7a39e;
+									left: 50%;
+									color: white;
+									margin: 0 10px;
+									border: none;
+									padding: 10px;
+								}
+							}
+						}
+						.pic {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width:549px) {
+	.sign-up {
+		width: 100%;
+		font-family: 'Poppins';
+		font-size: 2vmin;
+		margin-bottom: 0vmin;
+
+		.inner {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			text-align: center;
+
+			.h {
+				opacity: 0;
+				position: absolute;
+				top: -99999;
+			}
+			span {
+				display: block;
+				font: 14px/1 'Poppins';
+			}
+
+			.wrap {
+				width: 100%;
+				h1 {
+					margin-top: 15vmin;
+					margin-bottom: 5vmin;
+					font: bold 5vmin/1 'Poppins';
+				}
+
+				article.welcome_box {
+					width: 18vmin;
+					display: inline-block;
+					margin: 5vmin 4% 8vmin 0;
+					&:nth-of-type(3) {
+						margin-right: 0;
+					}
+					.circle {
+						clip-path: circle(50% at 50% 50%);
+						width: 100%;
+						height: 18vmin;
+						background-color: #444;
+						color: white;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+					p {
+						margin-top: 2.5vmin;
+						width: 100%;
+						color: #444;
+						font: 2vmin/1.2 'Lora';
+						display: none;
+					}
+				}
+
+				form {
+					width: 100%;
+					position: relative;
+					fieldset {
+						border: none;
+					}
+
+					.wrapper1 {
+						width: 100%;
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						background: #f8f5f0;
+						h2 {
+							position: absolute;
+							font: bold 5vmin/1 'Poppins';
+							left: 50%;
+							transform: translateX(-50%);
+							margin-top: 3vmin;
+						}
+						span {
+							font: 12px/1.35 'Poppins';
+							color: rgb(105, 13, 13);
+							margin-top: 3px;
+						}
+						.wrap {
+							width: 100%;
+							padding: 15vmin 10vmin 0;
+							textarea {
+								width: 100%;
+								height: 45vmin;
+								padding: 2vmin;
+								resize: none;
+								font: normal 14px/1.5 'Poppins';
+								margin-bottom: 3vmin;
+							}
+							.agreement {
+								text-align: center;
+								label[for='agreement'] {
+									font: 14px/1 'Poppins';
+									input[type='checkbox'] {
+										margin-right: 1vmin;
+									}
+								}
+							} //input[[type='radio'] 이런 식으로 input태그도 선택할 수 있다. 속성으로 찾는거는 [] 안에 쓰기.
+						}
+						table {
+							width: 100%;
+							margin: 2vmin 2vmin 5vmin;
+							padding: 0;
+							text-align: left;
+							border-collapse: collapse;
+							font: 14px/1 'Poppins';
+							tr {
+								width: 100%;
+								border-bottom: 1px solid #ddd;
+								&:nth-of-type(1) {
+									border-top: 1px solid #ddd;
+								}
+								th {
+									width: 30%;
+									padding-left: 2vmin;
+									font: bold 14px/1 'Poppins';
+								}
+								td {
+									padding: 10px 0 10px 5px;
+									#id,
+									#pwd1,
+									#pwd2 {
+										width: 95%;
+										height: 22px;
+										font: 14px/1 'Poppins';
+									}
+									#name {
+										width: 50%;
+									}
+									#birth {
+										width: 70%;
+										font: 14px/1 'Poppins';
+									}
+									#address {
+										width: 70%;
+										font: 14px/1 'Poppins';
+									}
+									#address2 {
+										width: 95%;
+										font: 14px/1 'Poppins';
+									}
+									button {
+										margin: 0 10px;
+										padding: 2px 6px;
+										font-size: 12px;
+									}
+									select {
+										font: 14px/1 'Poppins';
+										padding: 2px;
+									}
+									#phone2,
+									#phone3 {
+										width: 30%;
+										font: 14px/1 'Poppins';
+									}
+									#email {
+										width: 95%;
+										font: 14px/1 'Poppins';
+									}
+									label[for='sms1'],
+									label[for='sms2'] {
+										margin-right: 10px;
+									}
+								}
+							}
+							input[type='text'] {
+								font: 2vmin 'arial';
+								height: 22px;
+								padding-left: 1vmin;
+								border: none;
+							}
+							input[type='radio'] {
+								font: 14px 'arial';
+								margin-right: 0.5vmin;
+								&:nth-of-type(2) {
+									margin-left: 1.5vmin;
+								}
+							}
+						}
+					}
+
+					.wrapper2 {
+						h2 {
+							position: absolute;
+							left: 50%;
+							font: bold 5vmin/1 'Poppins';
+							top: 5vmin;
+							transform: translateX(-50%);
+						}
+						table {
+							width: 100%;
+							margin: 15vmin 2vmin 80px;
+							border-collapse: collapse;
+							font: 14px 'Poppins';
+
+							tr {
+								border-bottom: 1px solid #ddd;
+								&:nth-of-type(1) {
+									border-top: 1px solid #ddd;
+									border-bottom: none;
+									td {
+										padding-top: 10px;
+									}
+								}
+								&:last-child {
+									border-bottom: none;
+								}
+								th {
+									width: 30%;
+									padding-left: 2vmin;
+								}
+								td {
+									padding: 10px 0px;
+								}
+								button {
+									margin: 0 3px;
+									padding: 5px;
+									font: 12px/1 'arial';
+								}
+								select {
+									font: 14px/1 'Poppins';
+									margin: 0 5px;
+								}
+								input[type='text'] {
+									width: 50%;
+									margin: 0 5px;
+									font: 14px/1 'arial';
+									height: 22px;
+									border: none;
+								}
+								input[type='radio'] {
+									font: 14px 'arial';
+									margin-left: 10px;
+								}
+								& #submit {
+									position: absolute;
+									bottom: 24px;
+									font: 14px/1 'arial';
+									background: #a7a39e;
+									right: 50%;
+									color: white;
+									margin: 0 10px;
+									border: none;
+									padding: 10px;
+								}
+								& #reset {
+									position: absolute;
+									bottom: 24px;
+									font: 14px/1 'arial';
+									background: #a7a39e;
+									left: 50%;
+									color: white;
+									margin: 0 10px;
+									border: none;
+									padding: 10px;
+								}
+							}
+						}
+						.pic {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}*/
