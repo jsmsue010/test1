@@ -37,7 +37,9 @@ function Product_content() {
 							{img.map((i, idx) => {
 								return (
 									<li key={idx}>
-										<img src={i} alt={alt[idx]} />
+										<div className='img-wrap'>
+											<img src={i} alt={alt[idx]} />
+										</div>
 										<div className='shape' />
 										<p>{text[idx]}</p>
 									</li>
@@ -51,11 +53,9 @@ function Product_content() {
 					<h2>TECHNICAL SERVICES</h2>
 					<img className='banner' src={`${path}/img/banner4.jpg`} alt='' />
 					<p className='intro'>
-						Do you have a busy period of work in your business and you do not
-						want to get caught unprepared? With the Preventive Maintenance
-						program to take care of your oven by our most qualified service
-						partners, you will be prepared for every upcoming business
-						opportunity!
+						With the Preventive Maintenance program to take care of your oven by
+						our most qualified service partners, you will be prepared for every
+						upcoming business opportunity!
 					</p>
 
 					<PC_tec />

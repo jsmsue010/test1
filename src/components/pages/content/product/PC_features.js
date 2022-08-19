@@ -21,9 +21,9 @@ function PC_features() {
 			let moving = st - now;
 			const ratio = (moving / winWidth) * 100;
 			if (moving > 0) {
-				ref.current.style.marginLeft = `${nowPic * -74 - ratio}%`;
+				ref.current.style.marginLeft = `${nowPic * -85 - ratio}%`;
 			} else if (moving < 0) {
-				ref.current.style.marginLeft = `${nowPic * -74 - ratio}%`;
+				ref.current.style.marginLeft = `${nowPic * -85 - ratio}%`;
 			}
 		}
 	};
@@ -38,7 +38,7 @@ function PC_features() {
 			nowPic--;
 			if (nowPic < 0) nowPic = 0;
 		}
-		ref.current.style.marginLeft = `${nowPic * -74}%`;
+		ref.current.style.marginLeft = `${nowPic * -87}%`;
 	};
 
 	const img = [
@@ -74,14 +74,14 @@ function PC_features() {
 	];
 
 	return (
-		<div
-			className='slide'
-			ref={ref}
-			onTouchStart={(e) => slideStart(e)}
-			onTouchMove={(e) => slideMove(e)}
-			onTouchEnd={(e) => slideEnd(e)}>
+		<div className='slide'>
 			<h3 className='hidden'>features</h3>
-			<div className='wrapper'>
+			<div
+				className='wrapper'
+				ref={ref}
+				onTouchStart={(e) => slideStart(e)}
+				onTouchMove={(e) => slideMove(e)}
+				onTouchEnd={(e) => slideEnd(e)}>
 				{img.map((i, idx) => {
 					return (
 						<div className='box' key={idx}>

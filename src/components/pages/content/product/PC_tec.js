@@ -22,8 +22,9 @@ function PC_tec() {
 						<img src={img[idx]} alt={t} />
 						<div
 							className='mob'
-							style={text === idx ? { border: '2px solid orange' } : null}
-						/>
+							style={
+								text === idx ? { border: '2px solid orange' } : null
+							}></div>
 						<h4>{t}</h4>
 					</div>
 				);
