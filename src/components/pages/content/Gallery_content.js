@@ -27,7 +27,7 @@ function Gallery_content() {
 					<div className='wrapper'>
 						{items.map((item, idx) => {
 							return (
-								<article key={idx}>
+								<div className='pic' key={idx}>
 									<img
 										src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`}
 										alt=''
@@ -38,14 +38,14 @@ function Gallery_content() {
 										}}
 									/>
 									<h2>{item.title}</h2>
-								</article>
+								</div>
 							);
 						})}
+						<p className='last'>
+							"We believe that making a succesful business is both a science and
+							a passion."
+						</p>
 					</div>
-					<p className='last'>
-						"We believe that making a succesful business is both a science and a
-						passion."
-					</p>
 				</div>
 			</div>
 

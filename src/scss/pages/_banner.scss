@@ -1,0 +1,93 @@
+.banner {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	margin: 0 auto;
+
+	h1 {
+		font: bold 15vmin/1 'Poppins';
+		color: #333;
+		position: absolute;
+		bottom: 3vmin;
+		left: 3%;
+	}
+
+	p {
+		font: bold 2.2vmin/1.5 'Lora';
+		color: #333;
+		position: absolute;
+		bottom: 3vmin;
+		right: 3%;
+		width: 25%;
+	}
+}
+
+.banner-image {
+	width: 100%;
+	height: 50vh;
+	object-fit: cover;
+}
+
+@media screen and(max-width:749px) {
+	.banner {
+		height: 50vmin;
+		padding: 5vmin;
+
+		h1 {
+			font: bold 10vmin/1 'Poppins';
+			bottom: 12vmin;
+			left: 10vmin;
+		}
+
+		p {
+			font: bold 3vmin/1.5 'Lora';
+			left: 10vmin;
+			width: 80%;
+		}
+	}
+
+	.banner-image {
+		height: 50vmin;
+	}
+}
+@media screen and(max-width:449px) {
+	.banner {
+		height: 100vmin;
+
+		.text-wrap {
+			width: 100%;
+			background-color: rgba(34, 34, 34, 0.411);
+			position: absolute;
+			bottom: 0vmin;
+			left: 0vmin;
+			height: 35vmin;
+			h1 {
+				color: #fff;
+				position: relative;
+				bottom: 0vmin;
+				margin-top: 5%;
+				margin-bottom: 2vmin;
+				margin-left: 5vmin;
+				left: 0vmin;
+				z-index: 1;
+			}
+
+			p {
+				font: 3.5vmin/1.2 'Lora';
+				color: #fff;
+				position: relative;
+				bottom: 0vmin;
+				right: auto;
+				left: 0vmin;
+				margin-left: 5vmin;
+			}
+		}
+	}
+
+	.banner-image {
+		height: 100vmin;
+		position: absolute;
+		top: 0;
+		z-index: -3;
+	}
+}

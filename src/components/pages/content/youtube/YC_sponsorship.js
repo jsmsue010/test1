@@ -8,9 +8,8 @@ function YC_sponsorship({ sps, setYoutube, setIndex }) {
 		<>
 			<h2>TV PROGRAM</h2>
 			<p>
-				we sponsored a TV show <br />
-				with our kitchen appliances.
-				<br /> check the youtube and our product
+				we sponsored a TV show with our kitchen appliances. check the youtube
+				and our product
 			</p>
 			{sps.map((m, idx) => {
 				return (

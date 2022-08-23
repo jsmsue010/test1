@@ -10,7 +10,7 @@ export const path = process.env.PUBLIC_URL;
 function Main_content() {
 	return (
 		<article className='main'>
-			<h1 className='hidden'>main page</h1>
+			<h1 className='hidden'>chrome kitchen main page</h1>
 			<div className='inner'>
 				<section className='brandInfo1' tabIndex={0}>
 					<MC_section1 />

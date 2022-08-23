@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import { path } from './Main_content';
-import { transform } from 'framer-motion';
 
 function MC_section1() {
 	const imgs1 = [
@@ -103,8 +102,8 @@ function MC_section1() {
 
 	return (
 		<div ref={allRef}>
-			<h1>ABOUT CHROME KITCHEN</h1>
-			<h2>PRODUCT</h2>
+			<h2>ABOUT CHROME KITCHEN</h2>
+			<h3>PRODUCT</h3>
 
 			<div className='box' ref={box1}>
 				{imgs1.map((i, idx) => {
@@ -116,7 +115,7 @@ function MC_section1() {
 							//role='article'
 							onFocus={animation}>
 							<img src={i} alt={alt1[idx]} />
-							<h3>{title1[idx]}</h3>
+							<h4>{title1[idx]}</h4>
 							<p>{p1[idx]}</p>
 						</div>
 					);
@@ -136,14 +135,14 @@ function MC_section1() {
 							//role='article'
 							onFocus={animation}>
 							<img src={i} alt={alt2[idx]} />
-							<h3>{title2[idx]}</h3>
+							<h4>{title2[idx]}</h4>
 							<p>{p2[idx]}</p>
 						</div>
 					);
 				})}
 			</div>
 
-			<a href='/' className='link-brand'>
+			<a href='/brand' className='link-brand'>
 				view more <FontAwesomeIcon icon={faArrowRightLong} />
 			</a>
 		</div>

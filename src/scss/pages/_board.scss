@@ -17,22 +17,29 @@
 		position: relative;
 
 		.box {
+			position: relative;
 			width: 80%;
+			height: 70px;
 			border-top: 1px solid #ddd;
 			margin: 0 auto;
-			padding: 2vmin;
-			position: relative;
 			display: flex;
 			&:last-of-type {
 				border-bottom: 1px solid #ddd;
 			}
 			span {
-				margin-left: 10vmin;
+				position: absolute;
+				top: 50%;
+				left: 15%;
+				transform: translateY(-50%);
 				color: rgb(185, 23, 23);
 				font: bold 28px/1 'arial';
 			}
 			h2 {
+				position: absolute;
 				display: inline-block;
+				top: 50%;
+				left: 20%;
+				transform: translateY(-50%);
 				margin: 0 2vmin;
 				font: 600 20px/1 'Poppins';
 				color: #333;
@@ -147,8 +154,8 @@
 				h2 {
 					font: bold 2.5vmin/1 'Poppins';
 				}
-				.span {
-					margin-left: 2vmmin;
+				span {
+					margin-left: 5vmin;
 				}
 			}
 			.hidden_box {
@@ -224,100 +231,64 @@
 		}
 	}
 }
-
-/*
-@media screen and(max-width: 440px) {
+@media screen and(max-width: 549px) {
 	.board {
+		h1 {
+			font: bold 12vmin/1 'Lora';
+		}
 		.intro {
-			width: 60%;
-			font: 3vmin/1.3 'Poppins';
-			margin: 0vmin auto 3vmin;
+			width: 65%;
+			font: 13px/1.3 'Poppins';
 		}
 
 		.inner {
-			width: 100%;
-			margin: 5vmin auto 10vmin;
-
 			.box {
-				font: 2.5vmin/1 'arial';
+				font: 14px/1 'arial';
 				h2 {
-					font: bold 2.5vmin/1 'Poppins';
+					font: bold 14px/1 'Poppins';
 				}
-				.span {
-					margin-left: 2vmmin;
+				span {
+					font: bold 20px/1 'arial';
 				}
 			}
 			.hidden_box {
-				margin: 1vmin 0 5vmin 15vmin;
 				> p {
-					font: 2.5vmin/1 'Poppins';
-					padding: 3vmin 3vmin;
+					font: 14px/1 'Poppins';
+					padding: 5vmin;
 				}
 			}
 			.writeBox {
-				padding: 2vmin 0;
 				> .title {
-					width: 85%;
-					margin: 2vmin auto;
 					label {
-						width: 20%;
-						text-align: center;
+						font: bold 14px/1 'Poppins';
 					}
 					input[type='text'] {
-						width: 75%;
-						margin: 0 auto;
-						display: inline-block;
+						font: 14px/1 'Poppins';
 					}
 				}
 				> .text {
-					width: 85%;
-					margin: 2vmin auto;
 					label {
-						width: 20%;
-						text-align: center;
+						font: bold 14px/1 'Poppins';
 					}
 					textarea {
-						width: 75%;
-						margin: 0 auto;
+						font: 14px/1 'Poppins';
 					}
 				}
 			}
 			.writeWrap {
-				font: italic bold 4vmin/1 'Lora';
+				font: italic bold 15px/1 'Lora';
 				> button {
-					margin-left: 3vmin;
-					font: bold 18px/1 'Poppins';
-					background: #fff;
-					padding: 1vmin 4vmin;
-					cursor: pointer;
-					&:focus {
-						outline: 2px solid black;
-					}
+					font: bold 14px/1 'Poppins';
 				}
 			}
 
 			.buttonWrap {
-				position: relative;
-				text-align: right;
-				width: 80%;
-				margin: 0 auto;
 				> button {
-					position: relative;
-					bottom: 0;
-					right: 0;
-					margin-left: 17px;
-					margin-right: 0;
-					padding: 5px 20px;
-					border: 2px solid #222;
-					font: bold 2vmin/1 'Poppins';
-					background: #fff;
-					cursor: pointer;
-					&:focus {
-						outline: 2px solid black;
-					}
+					padding: 3px 10px;
+					margin-left: 10px;
+					font: bold 14px/1 'Poppins';
 				}
 			}
 		}
 	}
 }
-*/

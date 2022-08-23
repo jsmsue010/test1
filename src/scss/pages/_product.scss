@@ -159,7 +159,7 @@
 					transform: translateY(-50%);
 				}
 
-				.banner {
+				.tec-img {
 					width: 99.5vw;
 					position: absolute;
 					height: 50vmin;
@@ -317,9 +317,7 @@
 					}
 				}
 				&:nth-of-type(2) {
-					h2 {
-					}
-					.banner {
+					.tec-img {
 						width: 100%;
 						left: 0;
 					}

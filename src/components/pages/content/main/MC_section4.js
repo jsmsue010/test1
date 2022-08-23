@@ -23,10 +23,8 @@ function MC_section4() {
 	}, [vid]);
 
 	return (
-		<div className='prevNews'>
-			<div className='wrapper1'>
-				<h1>LATEST NEWS</h1>
-			</div>
+		<>
+			<h3>LATEST NEWS</h3>
 
 			<div className='vid' onClick={() => open(true)}>
 				<img
@@ -41,7 +39,7 @@ function MC_section4() {
 				return (
 					<div className='text' key={idx}>
 						<div className='wrap'>
-							<h2>{m.title}</h2>
+							<h4>{m.title}</h4>
 						</div>
 					</div>
 				);
@@ -57,7 +55,7 @@ function MC_section4() {
 			</div>
 
 			{open && <Popup />}
-		</div>
+		</>
 	);
 }
 

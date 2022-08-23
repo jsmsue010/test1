@@ -122,10 +122,6 @@ function YC_photos() {
 				});
 			}
 		} else {
-			/*
-			vw = window.innerWidth / 100;
-			vw >= 11.8 ? (img = (0.7 * vw * 0.85) / 3) : (img = (0.85 * vw) / 3); */
-
 			//  width 549px를 넘으면
 			if (slide.current.style.marginLeft === 'auto') {
 				slide.current.style.marginLeft = '-33%';
@@ -208,69 +204,60 @@ function YC_photos() {
 	};
 
 	return (
-		<div>
-			<div className='frame'>
-				<span>PHOTOS </span>
-				<article className='pics'>
-					<div className='slide' ref={slide}>
-						<img src={`${path}/img/tv1.jpg`} alt='' />
-						<img src={`${path}/img/tv2.jpg`} alt='' />
-						<img src={`${path}/img/tv3.jpg`} alt='' />
-						<img src={`${path}/img/tv4.jpg`} alt='' />
-						<img src={`${path}/img/tv5.jpg`} alt='' />
-						<img src={`${path}/img/tv6.jpg`} alt='' />
-						<img src={`${path}/img/tv7.png`} alt='' />
-					</div>
-					{mobile ? (
-						<ul className='index'>
-							<li
-								onClick={() => {
-									setIdx(0);
-									index(0);
-								}}></li>
-							<li
-								onClick={() => {
-									setIdx(1);
-									index(1);
-								}}></li>
-							<li
-								onClick={() => {
-									setIdx(2);
-									index(2);
-								}}></li>
-							<li
-								onClick={() => {
-									setIdx(3);
-									index(3);
-								}}></li>
-							<li
-								onClick={() => {
-									setIdx(4);
-									index(4);
-								}}></li>
-							<li
-								onClick={() => {
-									setIdx(5);
-									index(5);
-								}}></li>
-							<li
-								onClick={() => {
-									setIdx(6);
-									index(6);
-								}}></li>
-						</ul>
-					) : null}
-
-					<a href='#' className='stop'>
-						STOP
-					</a>
-					<a href='#' className='play'>
-						PLAY
-					</a>
-				</article>
-				<FontAwesomeIcon icon={faAngleRight} className='next' onClick={next} />
-				<FontAwesomeIcon icon={faAngleLeft} className='prev' onClick={prev} />
-			</div>
+		<div className='frame'>
+			<span>PHOTOS </span>
+			<article className='pics'>
+				<div className='slide' ref={slide}>
+					<img src={`${path}/img/tv1.jpg`} alt='' />
+					<img src={`${path}/img/tv2.jpg`} alt='' />
+					<img src={`${path}/img/tv3.jpg`} alt='' />
+					<img src={`${path}/img/tv4.jpg`} alt='' />
+					<img src={`${path}/img/tv5.jpg`} alt='' />
+					<img src={`${path}/img/tv6.jpg`} alt='' />
+					<img src={`${path}/img/tv7.png`} alt='' />
+				</div>
+				{mobile ? (
+					<ul className='index'>
+						<li
+							onClick={() => {
+								setIdx(0);
+								index(0);
+							}}></li>
+						<li
+							onClick={() => {
+								setIdx(1);
+								index(1);
+							}}></li>
+						<li
+							onClick={() => {
+								setIdx(2);
+								index(2);
+							}}></li>
+						<li
+							onClick={() => {
+								setIdx(3);
+								index(3);
+							}}></li>
+						<li
+							onClick={() => {
+								setIdx(4);
+								index(4);
+							}}></li>
+						<li
+							onClick={() => {
+								setIdx(5);
+								index(5);
+							}}></li>
+						<li
+							onClick={() => {
+								setIdx(6);
+								index(6);
+							}}></li>
+					</ul>
+				) : null}
+			</article>
+			<FontAwesomeIcon icon={faAngleRight} className='next' onClick={next} />
+			<FontAwesomeIcon icon={faAngleLeft} className='prev' onClick={prev} />
 		</div>
 	);
 }

@@ -51,7 +51,7 @@ function Product_content() {
 
 				<section>
 					<h2>TECHNICAL SERVICES</h2>
-					<img className='banner' src={`${path}/img/banner4.jpg`} alt='' />
+					<img className='tec-img' src={`${path}/img/banner4.jpg`} alt='' />
 					<p className='intro'>
 						With the Preventive Maintenance program to take care of your oven by
 						our most qualified service partners, you will be prepared for every
