@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+import { path } from '../pages/content/main/Main_content';
 import Main_banner from '../pages/banner/Main_banner';
-import Brand_banner from '../pages/banner/Brand_banner';
+import Pages_banner from '../pages/banner/Pages_banner';
 import Brand_content from '../pages/content/brand/Brand_content';
-
 import Main_content from '../pages/content/main/Main_content';
 import Footer from './Footer';
 import Board_content from '../pages/content/board/Board_content';
@@ -33,32 +33,44 @@ function Layout({ children }) {
 			break;
 
 		case '/brand':
-			banner = <Brand_banner />;
+			banner = (
+				<Pages_banner src={`${path}/img/banner12.jpg`} pageName={`BRAND`} />
+			);
 			content = <Brand_content />;
 			break;
 
 		case '/product':
-			banner = <Brand_banner />;
+			banner = (
+				<Pages_banner src={`${path}/img//banner14.jpg`} pageName={`PRODUCT`} />
+			);
 			content = <Product_content />;
 			break;
 
 		case '/gallery':
-			banner = <Brand_banner />;
+			banner = (
+				<Pages_banner src={`${path}/img/banner00.jpg`} pageName={`GALLERY`} />
+			);
 			content = <Gallery_content />;
 			break;
 
 		case '/youtube':
-			banner = <Brand_banner />;
+			banner = (
+				<Pages_banner src={`${path}/img/banner331.jpg`} pageName={`YOUTUBE`} />
+			);
 			content = <Youtube_content />;
 			break;
 
 		case '/board':
-			banner = <Brand_banner />;
+			banner = (
+				<Pages_banner src={`${path}/img/banner332.jpg`} pageName={`BOARD`} />
+			);
 			content = <Board_content />;
 			break;
 
 		case '/sign_up':
-			banner = <Brand_banner />;
+			banner = (
+				<Pages_banner src={`${path}/img/banner33.jpg`} pageName={`SIGN-UP`} />
+			);
 			content = <SignUp_content />;
 			break;
 
@@ -68,7 +80,7 @@ function Layout({ children }) {
 
 	return (
 		<div className='layout'>
-			<div className='skipNavi' tabIndex='0' ref={init}>
+			<div className='skipNavi' tabIndex='1' ref={init}>
 				<button
 					aria-label='본문바로가기'
 					onClick={(e) => {
@@ -79,7 +91,7 @@ function Layout({ children }) {
 			</div>
 			<>{banner}</>
 			<main>
-				<div className='anchor' tabIndex='0' ref={test} />
+				<div className='anchor' tabIndex='-1' ref={test} />
 				{content}
 			</main>
 			<Footer tabIndex='0'>footer</Footer>

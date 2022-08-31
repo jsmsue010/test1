@@ -14,13 +14,13 @@ function BC_member() {
 		<>
 			<h2>MEMBER</h2>
 			<ul className='list'>
-				{members.map((a, idx) => {
+				{members.map((m, idx) => {
 					return (
-						<li key={idx}>
-							<img src={`${path}/img/${a.pic}`} alt='' />
+						<li key={idx} tabIndex={0}>
+							<img src={`${path}/img/${m.pic}`} alt={m.name} />
 							<div className='box'>
-								<p>{a.name}</p>
-								<p>{a.position}</p>
+								<p>{m.name}</p>
+								<p>{m.position}</p>
 							</div>
 						</li>
 					);

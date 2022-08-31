@@ -1,13 +1,14 @@
 .sign-up {
 	width: 100%;
 	font-family: 'Poppins';
-	font-size: 2vmin;
-	margin-bottom: 5vmin;
+	font-size: 18px;
+	margin-bottom: 100px;
+	overflow: hidden;
 
 	h1 {
 		text-align: center;
 		font: bold 50px/1 'Poppins';
-		margin-top: 10vmin;
+		margin-top: 100px;
 	}
 
 	.inner {
@@ -23,21 +24,21 @@
 		}
 		span {
 			display: block;
-			font: 1.5vmin/1 'Poppins';
+			font: 16px/1 'Poppins';
 		}
 
 		.welcome {
 			.welcome_box {
-				width: 18vmin;
+				width: 150px;
 				display: inline-block;
-				margin: 5vmin 4% 8vmin 0;
+				margin: 50px 30px 80px 0;
 				&:nth-of-type(3) {
 					margin-right: 0;
 				}
 				.circle {
 					clip-path: circle(50% at 50% 50%);
 					width: 100%;
-					height: 18vmin;
+					height: 150px;
 					background-color: #444;
 					color: white;
 
@@ -48,10 +49,10 @@
 					}
 				}
 				p {
-					margin-top: 2.5vmin;
+					margin-top: 25px;
 					width: 100%;
 					color: #444;
-					font: 2vmin/1.2 'Lora';
+					font: 18px/1.2 'Lora';
 				}
 			}
 		}
@@ -71,41 +72,41 @@
 				h2 {
 					position: absolute;
 					left: 25%;
-					padding-top: 3vmin;
+					padding-top: 30px;
 				}
 				span {
-					font: 1.5vmin/1.35 'Poppins';
+					font: 14px/1.35 'Poppins';
 					color: rgb(105, 13, 13);
 					margin-top: 10px;
 				}
 				.wrap {
 					width: 50%;
-					padding: 10vmin 5% 5% 0%;
+					padding: 100px 5% 5% 0%;
 					textarea {
 						width: 100%;
-						height: 45vmin;
-						padding: 2vmin;
+						height: 450px;
+						padding: 20px;
 						resize: none;
-						font: normal 1.5vmin/1.5 'Poppins';
-						margin-bottom: 3vmin;
+						font: normal 14px/1.5 'Poppins';
+						margin-bottom: 30px;
 					}
 					.agreement {
 						text-align: center;
 						label[for='agreement'] {
-							font: 1.7vmin/1 'Poppins';
+							font: 16px/1 'Poppins';
 							input[type='checkbox'] {
-								margin-right: 1vmin;
+								margin-right: 10px;
 							}
 						}
 					} //input[[type='radio'] 이런 식으로 input태그도 선택할 수 있다. 속성으로 찾는거는 [] 안에 쓰기.
 				}
 				table {
 					width: 50%;
-					margin: 10vmin 8vmin 5vmin;
+					margin: 100px 5% 50px;
 					padding: 50px;
 					text-align: left;
 					border-collapse: collapse;
-					font: 1.5vmin/1 'Poppins';
+					font: 16px/1 'Poppins';
 					tr {
 						width: 100%;
 						border-bottom: 1px solid #ddd;
@@ -114,7 +115,7 @@
 						}
 						th {
 							width: 25%;
-							padding: 0 2vmin 0 0.5vmin;
+							padding: 0 20px 0 0;
 							font: bold 16px/1 'Poopins';
 						}
 						td {
@@ -123,7 +124,7 @@
 							#pwd1,
 							#pwd2 {
 								width: 100%;
-								height: 3vmin;
+								height: 30px;
 								font: 16px/1 'Poppins';
 							}
 							#name {
@@ -166,16 +167,19 @@
 						}
 					}
 					input[type='text'] {
-						font: 2vmin 'arial';
+						font: 16px/1 'arial';
 						height: 30px;
-						padding-left: 1vmin;
+						padding-left: 10px;
 						border: none;
+						&::placeholder {
+							font: 14px/1 'Poppins';
+						}
 					}
 					input[type='radio'] {
 						font: 16px/1 'Poppins';
-						margin-right: 0.5vmin;
+						margin-right: 5px;
 						&:nth-of-type(2) {
-							margin-left: 1.5vmin;
+							margin-left: 15px;
 						}
 					}
 				}
@@ -189,13 +193,13 @@
 				h2 {
 					position: absolute;
 					left: 70%;
-					top: 4vmin;
+					top: 40px;
 					transform: translateX(-50%);
 				}
 
 				table {
 					width: 60%;
-					margin: 10vmin 8vmin 20vmin;
+					margin: 100px 80px 200px;
 					border-collapse: collapse;
 					font: 16px/1 'Poppins';
 
@@ -213,7 +217,7 @@
 						}
 						th {
 							width: 25%;
-							padding-left: 2vmin;
+							padding-left: 20px;
 						}
 						td {
 							padding: 10px 0px;
@@ -225,13 +229,13 @@
 						}
 						select {
 							font: 16px/1 'Poppins';
-							margin-left: 3vmin;
+							margin-left: 30px;
 						}
 						input[type='text'] {
-							width: 60%;
-							margin-left: 1vmin;
+							width: 50%;
+							margin-left: 10px;
 							font: 16px/1 'Poppins';
-							height: 3vmin;
+							height: 30px;
 							border: none;
 						}
 						input[type='radio'] {
@@ -240,7 +244,7 @@
 						}
 						& #submit {
 							position: absolute;
-							bottom: 5vmin;
+							bottom: 50px;
 							background: #a7a39e;
 							right: 50%;
 							color: white;
@@ -250,7 +254,7 @@
 						}
 						& #reset {
 							position: absolute;
-							bottom: 5vmin;
+							bottom: 50px;
 							background: #a7a39e;
 							left: 50%;
 							color: white;
@@ -264,12 +268,12 @@
 				.pic {
 					width: 50%;
 					font-size: 0;
-					margin-bottom: 20vmin;
+					margin-bottom: 200px;
 					img {
 						width: 100%;
-						height: 40vmin;
-						padding-top: 5vmin;
-						padding-left: 8vmin;
+						height: 400pz;
+						padding-top: 50px;
+						padding-left: 80px;
 						object-fit: cover;
 					}
 				}
@@ -284,16 +288,8 @@
 			width: 100%;
 
 			form {
-				.wrapper1 {
-					.wrap {
-						table {
-							margin: 10vmin 5vmin;
-						}
-					}
-				}
 				.wrapper2 {
 					table {
-						width: 60%;
 						tr {
 							&:nth-of-type(1) {
 								td {
@@ -312,14 +308,19 @@
 }
 @media screen and(max-width:799px) {
 	.sign-up {
+		margin-bottom: 0;
 		h1 {
-			margin-top: 15vmin;
-			margin-bottom: 5vmin;
-			font: bold 5vmin/1 'Poppins';
+			margin-top: 100px;
+			margin-bottom: 30px;
+			font: bold 36px/1 'Poppins';
 		}
 		.inner {
 			.welcome {
 				.welcome_box {
+					width: 100px;
+					.circle {
+						height: 100px;
+					}
 					p {
 						font: 14px/1.2 'Lora';
 					}
@@ -334,74 +335,41 @@
 						left: 50%;
 						transform: translateX(-50%);
 						font: bold 22px/1 'Poppins';
-						padding-top: 4vmin;
+						padding-top: 26px;
 					}
 					span {
 						font: 14px/1.35 'Poppins';
 					}
 					.wrap {
 						width: 100%;
-						padding: 10vmin 10vmin 0;
+						padding: 50px 50px 0;
 						textarea {
-							font: normal 20px/1.5 'Poppins';
+							font: normal 14px/1.5 'Poppins';
+							height: 300px;
+							margin-top: 20px;
 						}
 						.agreement {
 							label[for='agreement'] {
-								font: 20px/1 'Poppins';
+								font: 16px/1 'Poppins';
 							}
 						} //input[[type='radio'] 이런 식으로 input태그도 선택할 수 있다. 속성으로 찾는거는 [] 안에 쓰기.
 					}
 					table {
 						width: 100%;
-						margin: 5vmin;
-						font: 20px/1 'Poppins';
+						margin: 50px;
 						tr {
-							th {
-								font: bold 16px/1 'Poppins';
-							}
 							td {
 								padding: 15px 0;
-								#id,
-								#pwd1,
-								#pwd2 {
-									height: 30px;
-									font: 16px/1 'Poppins';
-								}
-								#birth {
-									font: 16px/1 'Poppins';
-								}
-								#address {
-									font: 16px/1 'Poppins';
-								}
 								#address2 {
 									width: 100%;
-									font: 16px/1 'Poppins';
 								}
-								button {
-									font-size: 16px;
-								}
-								select {
-									font: 16px/1 'Poppins';
-								}
-								#phone2,
-								#phone3 {
-									font: 16px/1 'Poppins';
-								}
-								#email {
-									font: 16px/1 'Poppins';
-								}
-								label[for='sms1'],
-								label[for='sms2'] {
-									margin-right: 10px;
+							}
+							input[type='text'] {
+								&::placeholder {
+									font: 12px/1 'Poppins';
 								}
 							}
 						}
-					}
-					input[type='text'] {
-						font: 16px 'arial';
-					}
-					input[type='radio'] {
-						font: 16px 'arial';
 					}
 				}
 				.wrapper2 {
@@ -411,8 +379,7 @@
 					}
 					table {
 						width: 100%;
-						margin: 15vmin 4vmin 20vmin;
-						font: 16px/1 'Poppins';
+						margin: 100px 30px 150px;
 
 						tr {
 							&:nth-of-type(1) {
@@ -425,19 +392,12 @@
 							}
 							button {
 								padding: 5px;
-								font: 16px/1 'arial';
 							}
 							select {
-								font: 20px/1 'Poppins';
 								margin: 0 5px;
 							}
 							input[type='text'] {
 								margin: 0 5px;
-								font: 20px/1 'arial';
-								height: 30px;
-							}
-							input[type='radio'] {
-								font: 20px 'arial';
 							}
 						}
 					}
@@ -452,9 +412,18 @@
 }
 @media screen and(max-width:449px) {
 	.sign-up {
+		h1 {
+			font: bold 26px/1 'Poppins';
+			padding: 0 30px;
+		}
 		.inner {
 			.welcome {
 				.welcome_box {
+					width: 80px;
+					margin: 10px 10px 30px 0;
+					.circle {
+						height: 80px;
+					}
 					p {
 						display: none;
 					}
@@ -467,20 +436,16 @@
 						font: bold 18px/1 'Poppins';
 					}
 					span {
-						font: 14px/1.35 'Poppins';
+						font: 12px/1.35 'Poppins';
 					}
 					.wrap {
-						padding: 15vmin 10vmin 0;
+						padding: 40px 20px 0;
 						textarea {
-							font: normal 14px/1.5 'Poppins';
-						}
-						.agreement {
-							label[for='agreement'] {
-								font: 16px/1 'Poppins';
-							}
+							height: 200px;
 						}
 					}
 					table {
+						margin: 20px;
 						font: 16px/1 'Poppins';
 						tr {
 							th {
@@ -519,13 +484,12 @@
 									font: 14px/1 'Poppins';
 								}
 							}
+							input[type='text'] {
+								&::placeholder {
+									font: 12px/1 'Poppins';
+								}
+							}
 						}
-					}
-					input[type='text'] {
-						font: 14px/1 'arial';
-					}
-					input[type='radio'] {
-						font: 14px/1 'arial';
 					}
 				}
 				.wrapper2 {
@@ -533,11 +497,13 @@
 						font: bold 18px/1 'Poppins';
 					}
 					table {
+						margin: 100px 20px 150px;
 						font: 14px/1 'Poppins';
 
 						tr {
 							th {
 								width: 33%;
+								padding-left: 0;
 							}
 							button {
 								font: 12px/1 'arial';
@@ -558,7 +524,7 @@
 								margin-left: 0;
 							}
 							#sms2 {
-								margin-left: 1.5vmin;
+								margin-left: 5px;
 							}
 							& #submit {
 								font: 16px/1 'arial';

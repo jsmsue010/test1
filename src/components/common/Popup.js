@@ -1,30 +1,31 @@
-import { useState, forwardRef, useImperativeHandle } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { useRef } from 'react';
 import { useEffect } from 'react';
 
-const Popup = forwardRef((props, ref) => {
-	const [popup, setPopup] = useState(props.youtube);
+const Popup = ({ children, setOpen, setFocusOn, type }) => {
+	const [on, setOn] = useState(true);
+
+	const modal = useRef(null);
 
 	useEffect(() => {
-		if (!popup)
-			setTimeout(() => {
-				props.setYoutube(false);
-			}, 500);
-	}, [popup]);
+		if (modal) {
+			modal.current.focus();
+		}
+	}, []);
 
-	useImperativeHandle(ref, () => {
-		return {
-			open: () => setPopup(true),
-			close: () => {
-				setPopup(false);
-			},
-		};
-	});
+	const focusMove = (e) => {
+		if (e.key === 'Tab') {
+			e.preventDefault();
+			modal.current.focus();
+		}
+	};
 
 	return (
 		<AnimatePresence>
-			{popup && (
-				<>
+			{on && (
+				<div className='popup-wrap' ref={modal} tabIndex={0}>
 					<motion.aside
 						className='popup'
 						initial={{ opacity: 0 }} //초기상태
@@ -35,13 +36,29 @@ const Popup = forwardRef((props, ref) => {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1, transition: { delay: 0.5 } }}
 							exit={{ opacity: 0 }}>
-							{props.children}
+							{children}
 						</motion.div>
+						<button
+							className='close'
+							onClick={() => {
+								setOn(false);
+								setTimeout(() => setOpen(false), 1100);
+								if (type === 'adv') {
+									setFocusOn('adv');
+								} else if (type === 'sps') {
+									setFocusOn('sps');
+								} else {
+									setFocusOn(true);
+								}
+							}}
+							onKeyDown={focusMove}>
+							CLOSE
+						</button>
 					</motion.aside>
-				</>
+				</div>
 			)}
 		</AnimatePresence>
 	);
-});
+};
 
 export default Popup;

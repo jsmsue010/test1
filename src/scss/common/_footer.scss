@@ -1,14 +1,14 @@
 footer {
 	width: 100%;
-	padding-top: 50px;
+	padding-top: 80px;
 	padding-bottom: 30px;
 	background-color: #222;
 	.inner {
-		width: 70%;
+		width: 1260px;
 		margin: 0 auto;
 
 		h1 {
-			font: bold 30px 'Poppins';
+			font: bold 30px/1 'Poppins';
 			color: #fff;
 			margin-bottom: 20px;
 			width: 50%;
@@ -24,7 +24,7 @@ footer {
 				font: bold 16px/1 'Poppins';
 				color: #fff;
 				margin-bottom: 10px;
-				margin-right: 20px;
+				margin-left: 20px;
 
 				a {
 					color: #fff;
@@ -44,72 +44,25 @@ footer {
 	}
 }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1279px) {
 	footer {
 		width: 100%;
-		padding: 30px;
+		padding: 80px 40px 30px;
 		.inner {
 			width: 100%;
 			margin: 0 auto;
 
 			h1 {
-				font: bold 3vmin 'Poppins';
+				font: bold 28px/1 'Poppins';
 				color: #fff;
 				margin-bottom: 20px;
 			}
-
-			li {
-				display: inline-block;
-				font: bold 2.5vmin/1 'Poppins';
-				color: #fff;
-				margin-bottom: 10px;
-
-				a {
-					color: #fff;
-				}
-			}
-			address {
-				font: normal 2vmin/1.5 'Poppins';
-				color: #fff;
-				margin-bottom: 10px;
-			}
-			p {
-				font: normal 2vmin/1.5 'Poppins';
-				color: #fff;
-				text-align: left;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 499px) {
-	footer {
-		width: 100%;
-		padding: 5vmin 5vmin 3vmin;
-		background-color: #222;
-		.inner {
-			width: 100%;
-			margin: 0 auto;
-
-			h1 {
-				font: bold 5vmin/1 'Poppins';
-				color: #fff;
-				margin-bottom: 0;
-				width: 50%;
-				display: inline-block;
-			}
-
 			ul {
-				width: 50%;
-				display: inline-block;
-				text-align: right;
-				margin-bottom: 3vmin;
 				li {
 					display: inline-block;
-					font: bold 3vmin/1 'Poppins';
+					font: bold 18px/1 'Poppins';
 					color: #fff;
-					margin-bottom: 2vmin;
-					margin-right: 2vmin;
+					margin-bottom: 10px;
 
 					a {
 						color: #fff;
@@ -117,12 +70,47 @@ footer {
 				}
 			}
 			address {
-				font: normal 3vmin/1.5 'Poppins';
+				font: normal 16px/1.5 'Poppins';
 				color: #fff;
-				margin-bottom: 3vmin;
+				margin-bottom: 10px;
 			}
 			p {
-				font: normal 3vmin/1.5 'Poppins';
+				font: normal 16px/1.5 'Poppins';
+				color: #fff;
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 599px) {
+	footer {
+		padding: 20px;
+		.inner {
+			h1 {
+				width: 100%;
+				font: bold 24px/1 'Poppins';
+			}
+
+			ul {
+				width: 100%;
+				margin-bottom: 10px;
+				li {
+					display: inline-block;
+					font: bold 12px/1 'Poppins';
+
+					a {
+						color: #fff;
+					}
+				}
+			}
+			address {
+				font: normal 12px/1.5 'Poppins';
+				color: #fff;
+				margin-bottom: 10px;
+			}
+			p {
+				font: normal 12px/1.5 'Poppins';
 				color: #fff;
 				text-align: right;
 			}

@@ -18,7 +18,7 @@ function MC_section3() {
 
 	return (
 		<div className='wrap'>
-			<h1>PROJECTS OF ART</h1>
+			<h2>PROJECTS OF ART</h2>
 			<img src={`${path}/img/chrome_banner2.jpg`} ref={imgSize} />
 			<p>
 				the worlds of high design and fashion meet and merge with chrome kitchen

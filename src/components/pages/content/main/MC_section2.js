@@ -3,25 +3,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import { path } from './Main_content';
 import { useEffect } from 'react';
+import { Slide } from '../../../class/slide';
 
 function MC_section2() {
 	const img = useRef(null);
 	const link = useRef(null);
 
 	useEffect(() => {
-		if (link) {
-			const io = new IntersectionObserver((entry) => {
-				if (entry[0].isIntersecting) {
-					entry[0].target.style.width = '100%';
-				}
-			});
-			io.observe(link.current);
-		}
+		setTimeout(() => {
+			if (link.current) {
+				const io = new IntersectionObserver((entry) => {
+					if (entry[0].isIntersecting) {
+						link.current.style.left = '0';
+					}
+				});
+				io.observe(link.current);
+			}
+		}, 100);
 	}, []);
-
-	let press = false;
-	let s;
-	let n = 0;
 
 	const imgPath = [
 		`${path}/img/brand3.jpg`,
@@ -35,60 +34,63 @@ function MC_section2() {
 		' SENSE.Klean',
 	];
 
+	let press = false;
+
+	const slide = new Slide(350, 85, 3);
+
+	const touchStart = (e) => {
+		press = true;
+		const first = e.changedTouches[0].clientX;
+		slide.start = first;
+	};
+
 	const touchMove = (e) => {
 		if (press) {
 			const now = e.changedTouches[0].clientX;
-			const move = s - now;
-			const ratio = (-move / 350) * 100;
-			img.current.style.marginLeft = `${n * 85 + ratio}%`;
+			img.current.style.marginLeft = `${slide.slideMove(now)}%`;
 		}
 	};
 	const touchEnd = (e) => {
 		press = false;
 		const end = e.changedTouches[0].clientX;
-		if (s - end > 40) {
-			n--;
-			if (n < -2) n = -2;
-		} else if (s - end < -40) {
-			n++;
-			if (n > 0) n = 0;
-		}
-		img.current.style.marginLeft = `${n * 85}%`;
+		img.current.style.marginLeft = `${slide.slideEnd(end)}%`;
+	};
+
+	const focusMove = (idx) => {
+		if (window.innerWidth < 500) img.current.style.marginLeft = `${idx * -85}%`;
 	};
 
 	return (
 		<>
-			<h1>BEYOND THE KITCHEN</h1>
-			<h2>BRAND STORY</h2>
+			<h2>BEYOND THE KITCHEN</h2>
+			<h3>BRAND STORY</h3>
 
 			<div className='case'>
 				<div
 					className='wrap'
 					draggable='true'
 					ref={img}
-					onTouchStart={(e) => {
-						press = true;
-						s = e.changedTouches[0].clientX;
-					}}
+					onTouchStart={(e) => touchStart(e)}
 					onTouchEnd={(e) => touchEnd(e)}
 					onTouchMove={(e) => touchMove(e)}>
 					{imgPath.map((i, idx) => {
 						return (
 							<div
-								className='section2-article'
+								className='section2-box'
 								//role='article'
 								draggable='true'
 								key={idx}
-								tabIndex={0}>
+								tabIndex={0}
+								onFocus={() => focusMove(idx)}>
 								<img src={i} alt={alt[idx]} />
-								<h3>{title[idx]}</h3>
+								<h4>{title[idx]}</h4>
 							</div>
 						);
 					})}
 				</div>
 
 				<div className='linkWrapper'>
-					<a href='/brand' ref={link}>
+					<a href='/product' ref={link}>
 						view more <FontAwesomeIcon icon={faArrowRightLong} />
 					</a>
 				</div>

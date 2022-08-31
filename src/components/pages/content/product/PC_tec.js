@@ -18,7 +18,12 @@ function PC_tec() {
 		<div className='wrapper'>
 			{textArr.map((t, idx) => {
 				return (
-					<div className='box' key={idx} onClick={() => setText(idx)}>
+					<div
+						className='box'
+						key={idx}
+						onClick={() => setText(idx)}
+						onFocus={() => setText(idx)}
+						tabIndex={0}>
 						<img src={img[idx]} alt={t} />
 						<div
 							className='mob'

@@ -1,9 +1,49 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useRef } from 'react';
 
-function YC_sponsorship({ sps, setYoutube, setIndex }) {
-	const [vidIndex, setVidIndex] = useState(0);
+function YC_sponsorship({
+	sps,
+	setOpen,
+	setIndex,
+	focusOn,
+	setFocusOn,
+	setType,
+}) {
+	const vids = useRef(null);
+	const vidIndex = useRef(0);
+
+	useEffect(() => {
+		if (vids.current) {
+			const io = new IntersectionObserver((entry) => {
+				if (entry[0].isIntersecting) {
+					const spsBox = vids.current.querySelectorAll('.sps-box');
+					spsBox.forEach((s) => (s.style.opacity = `1`));
+				}
+			});
+			io.observe(vids.current);
+		}
+	}, []);
+
+	useEffect(() => {
+		if (focusOn === 'sps') {
+			const sps = vids.current.querySelectorAll('.sps-box');
+			sps[vidIndex.current].focus();
+		}
+	}, [focusOn]);
+
+	const click = (idx) => {
+		setIndex(3 + idx);
+		setOpen(true);
+		setFocusOn(false);
+		setType('sps');
+		vidIndex.current = idx;
+	};
+
+	const focusMove = (e, idx) => {
+		if (e.key == 'Enter') {
+			click(e, idx);
+		}
+	};
+
 	return (
 		<>
 			<h2>TV PROGRAM</h2>
@@ -11,20 +51,23 @@ function YC_sponsorship({ sps, setYoutube, setIndex }) {
 				we sponsored a TV show with our kitchen appliances. check the youtube
 				and our product
 			</p>
-			{sps.map((m, idx) => {
-				return (
-					<div className='sps-box' key={idx}>
-						<img
-							src={m.snippet.thumbnails.standard.url}
-							onClick={() => {
-								setIndex(idx);
-								setVidIndex(idx);
-								setYoutube(true);
-							}}
-						/>
-					</div>
-				);
-			})}
+			<div className='vids' ref={vids}>
+				{sps.map((m, idx) => {
+					return (
+						<div
+							className='sps-box'
+							key={idx}
+							onClick={() => click(idx)}
+							onKeyDown={(e) => focusMove(e, idx)}
+							tabIndex={0}>
+							<img
+								src={m.snippet.thumbnails.standard.url}
+								alt={`tv show` + (idx + 1)}
+							/>
+						</div>
+					);
+				})}
+			</div>
 		</>
 	);
 }

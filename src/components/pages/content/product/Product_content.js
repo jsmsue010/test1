@@ -21,7 +21,7 @@ function Product_content() {
 		<article className='product'>
 			<h1 className='hidden'>product page</h1>
 			<div className='inner'>
-				<section>
+				<section tabIndex={0}>
 					<h2 className='hidden'>product features</h2>
 					<p className='intro'>
 						A complete offering for high technology collections, articulated in
@@ -31,12 +31,12 @@ function Product_content() {
 
 					<PC_features />
 
-					<div className='color-list'>
+					<div className='color-list' tabIndex={0}>
 						<h3>SIGNATURE COLOR</h3>
 						<ul>
 							{img.map((i, idx) => {
 								return (
-									<li key={idx}>
+									<li key={idx} tabIndex={0}>
 										<div className='img-wrap'>
 											<img src={i} alt={alt[idx]} />
 										</div>
@@ -49,7 +49,7 @@ function Product_content() {
 					</div>
 				</section>
 
-				<section>
+				<section tabIndex={0}>
 					<h2>TECHNICAL SERVICES</h2>
 					<img className='tec-img' src={`${path}/img/banner4.jpg`} alt='' />
 					<p className='intro'>

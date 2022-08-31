@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faAngleLeft,
-	faAngleRight,
-	faCirclePlay,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Anim } from '../../../class/anime';
 import { path } from '../main/Main_content';
 
@@ -13,27 +9,20 @@ function YC_photos() {
 	const [idx, setIdx] = useState(false);
 	const [imgs, setImgs] = useState();
 	const mobile = useRef(false);
-	const size = useRef(0);
 
-	let vw = size.current;
-	//let vw = 0;
-	console.log('s', vw);
 	let click = true;
 	let img;
 
 	useEffect(() => {
 		if (slide) {
-			console.log(slide.current);
 			setImgs(slide.current.querySelectorAll('img'));
 		}
 	}, [slide]);
 
 	useEffect(() => {
-		//console.log('set');
 		getVw();
 		window.addEventListener('resize', getVw);
 		return () => {
-			//console.log('clear');
 			window.removeEventListener('resize', getVw);
 		};
 	}, []);
@@ -54,14 +43,11 @@ function YC_photos() {
 
 	const index = (n) => {
 		let num;
-		console.log(idx);
 		if (idx - n > 0) {
 			num = 1;
 		} else if (idx - n < 0) {
 			num = -1;
 		} else return;
-
-		console.log(n, num);
 
 		new Anim(imgs[idx], {
 			prop: 'left',
@@ -129,7 +115,6 @@ function YC_photos() {
 
 			if (!click) return;
 			click = false;
-			console.log(img);
 			new Anim(slide.current, {
 				prop: 'margin-left',
 				value: '-66%',
@@ -203,61 +188,61 @@ function YC_photos() {
 		}
 	};
 
+	const images = [
+		`${path}/img/tv1.jpg`,
+		`${path}/img/tv2.jpg`,
+		`${path}/img/tv3.jpg`,
+		`${path}/img/tv4.jpg`,
+		`${path}/img/tv5.jpg`,
+		`${path}/img/tv6.jpg`,
+		`${path}/img/tv7.png`,
+	];
+
 	return (
 		<div className='frame'>
 			<span>PHOTOS </span>
 			<article className='pics'>
 				<div className='slide' ref={slide}>
-					<img src={`${path}/img/tv1.jpg`} alt='' />
-					<img src={`${path}/img/tv2.jpg`} alt='' />
-					<img src={`${path}/img/tv3.jpg`} alt='' />
-					<img src={`${path}/img/tv4.jpg`} alt='' />
-					<img src={`${path}/img/tv5.jpg`} alt='' />
-					<img src={`${path}/img/tv6.jpg`} alt='' />
-					<img src={`${path}/img/tv7.png`} alt='' />
+					{images.map((i, idx) => {
+						return <img src={i} alt={`kitchen` + (idx + 1)} key={idx} />;
+					})}
 				</div>
 				{mobile ? (
-					<ul className='index'>
-						<li
-							onClick={() => {
-								setIdx(0);
-								index(0);
-							}}></li>
-						<li
-							onClick={() => {
-								setIdx(1);
-								index(1);
-							}}></li>
-						<li
-							onClick={() => {
-								setIdx(2);
-								index(2);
-							}}></li>
-						<li
-							onClick={() => {
-								setIdx(3);
-								index(3);
-							}}></li>
-						<li
-							onClick={() => {
-								setIdx(4);
-								index(4);
-							}}></li>
-						<li
-							onClick={() => {
-								setIdx(5);
-								index(5);
-							}}></li>
-						<li
-							onClick={() => {
-								setIdx(6);
-								index(6);
-							}}></li>
-					</ul>
+					<div className='index'>
+						{images.map((i, idx) => {
+							return (
+								<button
+									key={idx}
+									onClick={() => {
+										setIdx(idx);
+										index(idx);
+									}}
+									onFocus={() => {
+										setIdx(idx);
+										index(idx);
+									}}
+									tabIndex={0}
+									aria-label={idx + `번 이미지`}
+								/>
+							);
+						})}
+					</div>
 				) : null}
 			</article>
-			<FontAwesomeIcon icon={faAngleRight} className='next' onClick={next} />
-			<FontAwesomeIcon icon={faAngleLeft} className='prev' onClick={prev} />
+			<button
+				aria-label='이전 버튼. 엔터를 누를때마다 이전 이미지가 보입니다.'
+				className='prev'
+				onClick={prev}
+				tabIndex={mobile.current ? -1 : 0}>
+				<FontAwesomeIcon icon={faAngleLeft} />
+			</button>
+			<button
+				aria-label='다음 버튼. 엔터를 누를때마다 다음 이미지가 보입니다.'
+				className='next'
+				onClick={next}
+				tabIndex={mobile.current ? -1 : 0}>
+				<FontAwesomeIcon icon={faAngleRight} />
+			</button>
 		</div>
 	);
 }

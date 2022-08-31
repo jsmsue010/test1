@@ -7,13 +7,13 @@ import { Anim } from '../../class/anime';
 const path = process.env.PUBLIC_URL;
 
 const imgs = [
-	`${path}/img/store2_Moment.jpg`,
+	`${path}/img/spon_Moment.jpg`,
 	`${path}/img/brandMoment.jpg`,
 	`${path}/img/product3_Moment.jpg`,
 	`${path}/img/brand2_Moment.jpg`,
 ];
 const vids = [
-	`${path}/img/store2_Trim2.mp4`,
+	`${path}/img/product6.mp4`,
 	`${path}/img/brand.mp4`,
 	`${path}/img/product3.mp4`,
 	`${path}/img/brand2.mp4`,
@@ -44,7 +44,6 @@ function Main_banner() {
 
 	let enable = true;
 
-	//커스텀훅으로 만들기.
 	useEffect(() => {
 		getVw();
 		window.addEventListener('resize', getVw);
@@ -56,7 +55,16 @@ function Main_banner() {
 			? setMoblie(true)
 			: setMoblie(false);
 	}
-	//
+
+	useEffect(() => {
+		setTimeout(() => {
+			if (init.current) {
+				const h1 = init.current.querySelectorAll('h1');
+				h1[0].style.opacity = 1;
+				h1[0].style.right = `20px`;
+			}
+		}, 100);
+	}, []);
 
 	const show = (n) => {
 		const pics = visual.current.querySelectorAll('.pic');
@@ -129,7 +137,7 @@ function Main_banner() {
 							pics[idx].style.opacity = 0;
 						});
 						pics[n].style.opacity = '1';
-						pics[n].style.zIndex = '5';
+						pics[n].style.zIndex = '2';
 						enable = true;
 						index.current = n;
 					},
@@ -149,7 +157,7 @@ function Main_banner() {
 							pics[idx].style.opacity = 0;
 						});
 						pics[n].style.opacity = '1';
-						pics[n].style.zIndex = '5';
+						pics[n].style.zIndex = '2';
 						enable = true;
 						index.current = n;
 					},
@@ -185,7 +193,6 @@ function Main_banner() {
 		playBt[index.current].focus();
 	};
 	const playBtKeyEvent = (e) => {
-		console.log(e.currentTarget);
 		if (e.key === 'Tab') {
 			e.preventDefault();
 			const bt = indexButton.current.querySelectorAll('button');
@@ -208,20 +215,23 @@ function Main_banner() {
 	return (
 		<>
 			<Menu />
-			<div
-				className='main_visual'
-				ref={init}
-				tabIndex={0}
-				onTouchStart={mobile ? (e) => touchSt(e) : null}
-				onTouchEnd={mobile ? (e) => touchEnd(e) : null}>
+			<div className='main_visual' ref={init} tabIndex={mobile ? 0 : null}>
+				<h1>Chrome Kitchen</h1>
 				<div className='wrapper' ref={visual}>
 					{imgs.map((i, idx) => {
 						return (
-							<div className='pic' key={idx}>
+							<div
+								className='pic'
+								key={idx}
+								onTouchStart={mobile ? (e) => touchSt(e) : null}
+								onTouchEnd={mobile ? (e) => touchEnd(e) : null}
+								onFocus={!mobile ? () => show(idx) : null}
+								onBlur={!mobile ? () => pause(idx) : null}>
 								<img src={i} alt={alt[idx]} />
 								<video src={vids[idx]} muted loop />
 								<div className='box'>
 									<span
+										tabIndex={!mobile ? 0 : null}
 										onMouseEnter={!mobile ? () => show(idx) : null}
 										onMouseLeave={!mobile ? () => pause(idx) : null}
 										onClick={
@@ -231,7 +241,13 @@ function Main_banner() {
 														more(idx, !flex);
 												  }
 												: null
-										}>
+										}
+										onKeyDown={(e) => {
+											if (e.key === 'Enter' && !mobile) {
+												setFlex(!flex);
+												more(idx, !flex);
+											}
+										}}>
 										{title[idx]}
 									</span>
 									<button

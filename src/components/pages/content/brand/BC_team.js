@@ -73,7 +73,7 @@ function BC_team() {
 			<div className='teamWork'>
 				{img.map((i, idx) => {
 					return (
-						<div key={idx} className='box'>
+						<div key={idx} className='box' tabIndex={0}>
 							<img src={i} alt={alt[idx]} />
 							<p>{title[idx]}</p>
 						</div>

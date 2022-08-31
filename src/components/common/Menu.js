@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
-import { useRef } from 'react';
 
 const active = { color: '#aaa' };
 
@@ -39,7 +38,7 @@ function Menu() {
 			</li>
 			<li>
 				<NavLink to='/board' activeStyle={active}>
-					HELP
+					BOARD
 				</NavLink>
 			</li>
 			<li>
@@ -49,6 +48,23 @@ function Menu() {
 			</li>
 		</ul>
 	);
+
+	const menuAni = () => {
+		console.log(buttonOn);
+		if (!buttonOn) {
+			setButtonOn(true);
+			setTimeout(() => {
+				if (window.innerWidth > 599) {
+					firstKey.current.style.width = `45vw`;
+				} else {
+					firstKey.current.style.width = `80vw`;
+				}
+			}, 100);
+		} else {
+			firstKey.current.style.width = `0vw`;
+			setTimeout(() => setButtonOn(false), 500);
+		}
+	};
 
 	const menuTabl = (
 		<>
@@ -91,7 +107,9 @@ function Menu() {
 			</ul>
 			<button
 				className='close'
-				onClick={() => setButtonOn(false)}
+				onClick={() => {
+					menuAni();
+				}}
 				onKeyDown={(e) => {
 					if (e.key === 'Tab') firstKey.current.focus();
 				}}>
@@ -99,6 +117,7 @@ function Menu() {
 			</button>
 		</>
 	);
+
 	return (
 		<nav className='nav'>
 			<h1>
@@ -114,7 +133,9 @@ function Menu() {
 							icon={faBars}
 							className='icon'
 							tabIndex='0'
-							onClick={() => setButtonOn(!buttonOn)}
+							onClick={() => {
+								menuAni();
+							}}
 							onKeyDown={(e) => {
 								if (e.key === 'Enter') setButtonOn(!buttonOn);
 							}}

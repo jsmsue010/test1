@@ -18,7 +18,6 @@ function SignUp_content() {
 	const [val, setVal] = useState(initVal);
 	const [pass, setPass] = useState(false);
 	const [msg, setMsg] = useState({});
-	const [ck, setCk] = useState(false);
 
 	const check = (val) => {
 		console.log(val);
@@ -127,7 +126,7 @@ function SignUp_content() {
 					</div>
 				</section>
 
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={handleSubmit} tabIndex={0}>
 					<fieldset>
 						<legend className='h'>회원가입 양식</legend>
 

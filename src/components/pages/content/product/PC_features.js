@@ -1,44 +1,30 @@
 import React, { useRef } from 'react';
+import { Slide } from '../../../class/slide';
 import { path } from '../main/Main_content';
 
 function PC_features() {
 	const ref = useRef(null);
-	let n = 0;
 	let press = false;
-	let st;
-	let end;
-	let nowPic = 0;
-	const winWidth = window.innerWidth;
 
-	const slideStart = (e) => {
+	const slide = new Slide(350, 87, 4);
+
+	const touchStart = (e) => {
 		press = true;
-		st = e.changedTouches[0].clientX;
+		const first = e.changedTouches[0].clientX;
+		slide.start = first;
 	};
-	const slideMove = (e) => {
+	const touchMove = (e) => {
 		if (press) {
 			ref.current.style.transition = 'auto';
-			let now = e.changedTouches[0].clientX;
-			let moving = st - now;
-			const ratio = (moving / winWidth) * 100;
-			if (moving > 0) {
-				ref.current.style.marginLeft = `${nowPic * -85 - ratio}%`;
-			} else if (moving < 0) {
-				ref.current.style.marginLeft = `${nowPic * -85 - ratio}%`;
-			}
+			const now = e.changedTouches[0].clientX;
+			ref.current.style.marginLeft = `${slide.slideMove(now)}%`;
 		}
 	};
-	const slideEnd = (e) => {
+	const touchEnd = (e) => {
 		press = false;
 		ref.current.style.transition = '0.5s';
-		end = e.changedTouches[0].clientX;
-		if (st - end > 50) {
-			nowPic++;
-			if (nowPic > 3) nowPic = 3;
-		} else if (st - end < -50) {
-			nowPic--;
-			if (nowPic < 0) nowPic = 0;
-		}
-		ref.current.style.marginLeft = `${nowPic * -87}%`;
+		const end = e.changedTouches[0].clientX;
+		ref.current.style.marginLeft = `${slide.slideEnd(end)}%`;
 	};
 
 	const img = [
@@ -73,18 +59,25 @@ function PC_features() {
 		`perfect to catalyze as much light as possible in the kitchen`,
 	];
 
+	const focusMove = (idx) => {
+		if (window.innerWidth < 550) ref.current.style.marginLeft = `${idx * -87}%`;
+	};
 	return (
 		<div className='slide'>
 			<h3 className='hidden'>features</h3>
 			<div
 				className='wrapper'
 				ref={ref}
-				onTouchStart={(e) => slideStart(e)}
-				onTouchMove={(e) => slideMove(e)}
-				onTouchEnd={(e) => slideEnd(e)}>
+				onTouchStart={(e) => touchStart(e)}
+				onTouchMove={(e) => touchMove(e)}
+				onTouchEnd={(e) => touchEnd(e)}>
 				{img.map((i, idx) => {
 					return (
-						<div className='box' key={idx}>
+						<div
+							className='box'
+							key={idx}
+							tabIndex={0}
+							onFocus={() => focusMove(idx)}>
 							<img src={i} alt={alt[idx]} />
 							<h4>{title[idx]}</h4>
 							<p>{text[idx]}</p>

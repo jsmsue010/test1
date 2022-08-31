@@ -7,7 +7,7 @@ import BC_story from './BC_story';
 function Brand_contetnt() {
 	return (
 		<article className='brand'>
-			<h1>brand page</h1>
+			<h1 className='h'>brand page</h1>
 			<div className='inner'>
 				<section className='about' tabIndex={0}>
 					<BC_story />

@@ -44,7 +44,6 @@ function MC_section1() {
 	];
 
 	const box1 = useRef(null);
-
 	const box2 = useRef(null);
 
 	const allRef = useRef(null);
@@ -65,7 +64,7 @@ function MC_section1() {
 
 	useEffect(() => {
 		if (allRef && mobile) {
-			const refs = allRef.current.querySelectorAll('.section1-article');
+			const refs = allRef.current.querySelectorAll('.section1-box');
 
 			const io1 = new IntersectionObserver((entry) => {
 				if (entry[0].isIntersecting) {
@@ -80,14 +79,11 @@ function MC_section1() {
 			});
 		}
 		if (box1 && box2 && !mobile) {
-			const io = new IntersectionObserver(
-				(entry) => {
-					if (entry[0].isIntersecting) {
-						entry[0].target.style.transform = 'translateY(-20%)';
-					}
-				},
-				{ threshold: 0.3 }
-			);
+			const io = new IntersectionObserver((entry) => {
+				if (entry[0].isIntersecting) {
+					entry[0].target.style.transform = 'translateY(-20%)';
+				}
+			});
 
 			io.observe(box1.current);
 			io.observe(box2.current);
@@ -110,9 +106,8 @@ function MC_section1() {
 					return (
 						<div
 							key={idx}
-							className='section1-article '
+							className='section1-box '
 							tabIndex={0}
-							//role='article'
 							onFocus={animation}>
 							<img src={i} alt={alt1[idx]} />
 							<h4>{title1[idx]}</h4>
@@ -125,14 +120,14 @@ function MC_section1() {
 			<div
 				className='box'
 				ref={box2}
-				onFocus={(e) => (e.target.style.transform = `translateY(-15%)`)}>
+				tabIndex={0}
+				onFocus={(e) => (e.currentTarget.style.transform = 'translateY(-20%)')}>
 				{imgs2.map((i, idx) => {
 					return (
 						<div
 							key={idx}
-							className='section1-article '
+							className='section1-box '
 							tabIndex={0}
-							//role='article'
 							onFocus={animation}>
 							<img src={i} alt={alt2[idx]} />
 							<h4>{title2[idx]}</h4>

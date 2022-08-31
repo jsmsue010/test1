@@ -34,23 +34,32 @@
 					width: 40%;
 					height: 300px;
 
+					&:focus {
+						outline: 3px solid rgb(247, 207, 29);
+					}
+
 					&:nth-of-type(1) {
 						margin-top: 5%;
 						margin-left: 35%;
 						height: 400px;
+						z-index: 1;
+						opacity: 0;
+						transition: 0.7s 0.3s;
 					}
 					&:nth-of-type(2) {
 						position: absolute;
 						top: 30%;
 						left: 60%;
-						z-index: -2;
+						opacity: 0;
+						transition: 0.7s 0.6s;
 					}
 					&:nth-of-type(3) {
 						position: absolute;
 						width: 60%;
 						top: 45%;
 						left: -20%;
-						z-index: -3;
+						opacity: 0;
+						transition: 0.7s 0.9s;
 					}
 
 					img {
@@ -83,11 +92,17 @@
 				overflow: hidden;
 				border: 3px solid #222;
 
+				&:focus {
+					outline: 3px solid rgb(247, 207, 29);
+				}
+
 				&:nth-of-type(1) {
 					position: absolute;
 					top: 0;
 					width: 55%;
 					height: 400px;
+					opacity: 0;
+					transition: 0.7s 0.3s;
 				}
 				&:nth-of-type(2) {
 					position: absolute;
@@ -95,6 +110,8 @@
 					left: 15%;
 					width: 30%;
 					height: 350px;
+					opacity: 0;
+					transition: 0.7s 0.6s;
 				}
 				&:nth-of-type(3) {
 					position: absolute;
@@ -102,6 +119,8 @@
 					left: 48%;
 					width: 50%;
 					height: 400px;
+					opacity: 0;
+					transition: 0.7s 0.9s;
 				}
 
 				img {
@@ -117,13 +136,13 @@
 			margin: 150px 0;
 			.frame {
 				width: 90%;
-				padding: 0 1vmin;
+				padding: 0 10px;
 				margin: 0 auto;
 				position: relative;
 				span {
-					font: italic 4vmin/1 'Lora';
+					font: italic 36px/1 'Lora';
 					position: absolute;
-					top: -7vmin;
+					top: -70px;
 					right: 0;
 					&::before {
 						content: '';
@@ -133,7 +152,7 @@
 						background-color: #333;
 						position: absolute;
 						right: 0;
-						top: -1vmin;
+						top: -10px;
 					}
 				}
 				.pics {
@@ -147,26 +166,33 @@
 						img {
 							width: calc(100% / 7);
 							height: 280px;
-							padding: 0 0.5vmin;
+							padding: 0 5px;
 							object-fit: cover;
 						}
 					}
 				}
+				.index {
+					display: none;
+				}
 				.prev {
+					background: none;
+					border: none;
 					position: absolute;
 					top: 50%;
 					left: -50px;
 					transform: translate(0%, -50%);
 					color: #666;
-					font: bold 5vmin/1 'Poppins';
+					font: bold 42px/1 'Poppins';
 				}
 				.next {
+					background: none;
+					border: none;
 					position: absolute;
 					top: 50%;
 					right: -50px;
 					transform: translate(0%, -50%);
 					color: #666;
-					font: bold 5vmin/1 'Poppins';
+					font: bold 42px/1 'Poppins';
 				}
 			}
 		}
@@ -177,46 +203,18 @@
 	.youtube {
 		.inner {
 			width: 90%;
-			margin: 0 auto;
 
 			.advertisement {
-				display: flex;
-				margin-top: 150px;
-				height: 800px;
-
 				h2 {
-					width: 35%;
-					padding-right: 5%;
 					font: bold 50px/1.5 'Poppins';
 				}
-				p {
-					position: absolute;
-					top: 150px;
-					width: 55%;
-					font: 20px/1.5 'Poppins';
-				}
 				.advs {
-					flex: 2;
-					position: relative;
-
 					.adv-box {
-						position: relative;
-						overflow: hidden;
-						border: 3px solid #222;
-						width: 40%;
-						height: 300px;
-
-						&:nth-of-type(1) {
-							margin-top: 5%;
-							margin-left: 35%;
-							height: 300px;
-						}
 						&:nth-of-type(2) {
 							position: absolute;
 							height: 250px;
 							top: 30%;
 							left: 60%;
-							z-index: -2;
 						}
 						&:nth-of-type(3) {
 							position: absolute;
@@ -224,136 +222,49 @@
 							width: 70%;
 							top: 50%;
 							left: -20%;
-							z-index: -3;
-						}
-
-						img {
-							position: absolute;
-							top: -25%;
-							width: 100%;
-							height: 150%;
-							object-fit: cover;
 						}
 					}
 				}
 			}
 			.sponsorship {
-				position: relative;
-				width: 100%;
-				height: 950px;
 				h2 {
-					text-align: right;
 					font: bold 50px/1.5 'Poppins';
 					padding-top: 180px;
 				}
 				p {
-					text-align: right;
 					font: 20px/1.5 'Poppins';
 				}
 				.sps-box {
-					display: inline-block;
-					overflow: hidden;
-					border: 3px solid #222;
-
 					&:nth-of-type(1) {
-						position: absolute;
-						top: 0;
-						width: 55%;
 						height: 350px;
 					}
 					&:nth-of-type(2) {
-						position: absolute;
 						top: 380px;
-						left: 15%;
-						width: 30%;
-						height: 350px;
-					}
-					&:nth-of-type(3) {
-						position: absolute;
-						top: 480px;
-						left: 48%;
-						width: 50%;
-						height: 400px;
-					}
-
-					img {
-						position: absolute;
-						top: -25%;
-						width: 100%;
-						height: 150%;
-						object-fit: cover;
 					}
 				}
 			}
 			.photos {
-				margin: 150px 0;
 				.frame {
-					width: 90%;
-					padding: 0 1vmin;
-					position: relative;
-					span {
-						font: italic 4vmin/1 'Lora';
-						position: absolute;
-						top: -7vmin;
-						right: 0;
-						&::before {
-							content: '';
-							display: block;
-							width: 150%;
-							height: 1px;
-							background-color: #333;
-							position: absolute;
-							right: 0;
-							top: -1vmin;
-						}
-					}
 					.pics {
-						width: 100%;
-						overflow: hidden;
-						position: relative;
 						.slide {
-							position: relative;
-							width: calc((100% / 3) * 7);
-							//	margin-left: calc((100% / -3) * 2);
 							img {
-								width: calc(100% / 7);
 								height: 250px;
-								padding: 0 0.5vmin;
 							}
 						}
-					}
-					.prev {
-						position: absolute;
-						top: 50%;
-						left: -50px;
-						transform: translate(0%, -50%);
-						color: #666;
-						font: bold 5vmin/1 'Poppins';
-					}
-					.next {
-						position: absolute;
-						top: 50%;
-						right: -50px;
-						transform: translate(0%, -50%);
-						color: #666;
-						font: bold 5vmin/1 'Poppins';
 					}
 				}
 			}
 		}
 	}
 }
+
 @media screen and (max-width: 899px) {
 	.youtube {
 		.inner {
 			.advertisement {
 				display: block;
-				margin-top: 150px;
-				height: 800px;
 
 				h2 {
-					width: 35%;
-					padding-right: 5%;
 					font: bold 50px/1.3 'Poppins';
 				}
 				p {
@@ -364,18 +275,9 @@
 				}
 				.advs {
 					flex: none;
-					position: relative;
 
 					.adv-box {
-						position: relative;
-						overflow: hidden;
-						border: 3px solid #222;
-						width: 40%;
-						height: 300px;
-
 						&:nth-of-type(1) {
-							margin-top: 5%;
-							margin-left: 35%;
 							height: 250px;
 						}
 						&:nth-of-type(2) {
@@ -383,7 +285,6 @@
 							height: 200px;
 							top: 110%;
 							left: 60%;
-							z-index: -2;
 						}
 						&:nth-of-type(3) {
 							position: absolute;
@@ -391,47 +292,28 @@
 							width: 40%;
 							top: 30%;
 							left: 5%;
-							z-index: -3;
-						}
-
-						img {
-							position: absolute;
-							top: -25%;
-							width: 100%;
-							height: 150%;
-							object-fit: cover;
 						}
 					}
 				}
 			}
 			.sponsorship {
-				position: relative;
-				width: 100%;
 				height: 900px;
 				h2 {
-					text-align: right;
 					font: bold 50px/1.5 'Poppins';
 					padding-top: 0px;
 				}
 				p {
-					text-align: right;
 					font: 20px/1.5 'Poppins';
 					width: 90%;
 					margin: 0 10%;
 				}
 				.sps-box {
-					display: inline-block;
-					overflow: hidden;
-					border: 3px solid #222;
-
 					&:nth-of-type(1) {
-						position: absolute;
 						top: 25%;
 						width: 80%;
 						height: 350px;
 					}
 					&:nth-of-type(2) {
-						position: absolute;
 						top: 75%;
 						left: 5%;
 						width: 40%;
@@ -439,74 +321,28 @@
 					}
 
 					&:nth-of-type(3) {
-						position: absolute;
 						top: 55%;
 						left: 50%;
 						width: 50%;
 						height: 255px;
-					}
-
-					img {
-						position: absolute;
-						top: -25%;
-						width: 100%;
-						height: 150%;
-						object-fit: cover;
 					}
 				}
 			}
 			.photos {
 				margin: 100px 0;
 				.frame {
-					width: 90%;
-					padding: 0 1vmin;
-					position: relative;
-					span {
-						font: italic 4vmin/1 'Lora';
-						position: absolute;
-						top: -7vmin;
-						right: 0;
-						&::before {
-							content: '';
-							display: block;
-							width: 150%;
-							height: 1px;
-							background-color: #333;
-							position: absolute;
-							right: 0;
-							top: -1vmin;
-						}
-					}
 					.pics {
-						width: 100%;
-						overflow: hidden;
-						position: relative;
 						.slide {
-							position: relative;
-							width: calc((100% / 3) * 7);
-							//	margin-left: calc((100% / -3) * 2);
 							img {
-								width: calc(100% / 7);
-								height: 200px;
-								padding: 0 0.5vmin;
+								height: 30vw;
 							}
 						}
 					}
 					.prev {
-						position: absolute;
-						top: 50%;
 						left: -25px;
-						transform: translate(0%, -50%);
-						color: #666;
-						font: bold 5vmin/1 'Poppins';
 					}
 					.next {
-						position: absolute;
-						top: 50%;
 						right: -25px;
-						transform: translate(0%, -50%);
-						color: #666;
-						font: bold 5vmin/1 'Poppins';
 					}
 				}
 			}
@@ -529,7 +365,6 @@
 				}
 				.advs {
 					flex: none;
-					position: relative;
 
 					.adv-box {
 						&:nth-of-type(1) {
@@ -542,7 +377,6 @@
 							height: 100px;
 							top: 110%;
 							left: 60%;
-							z-index: -2;
 						}
 						&:nth-of-type(3) {
 							position: absolute;
@@ -550,15 +384,6 @@
 							width: 40%;
 							top: 30%;
 							left: 5%;
-							z-index: -3;
-						}
-
-						img {
-							position: absolute;
-							top: -25%;
-							width: 100%;
-							height: 150%;
-							object-fit: cover;
 						}
 					}
 				}
@@ -566,29 +391,21 @@
 			.sponsorship {
 				height: 550px;
 				h2 {
-					text-align: right;
 					font: bold 30px/1.5 'Poppins';
 					padding-top: 0px;
 				}
 				p {
-					text-align: right;
 					font: 14px/1.5 'Poppins';
 					width: 90%;
 					margin: 0 10%;
 				}
 				.sps-box {
-					display: inline-block;
-					overflow: hidden;
-					border: 3px solid #222;
-
 					&:nth-of-type(1) {
-						position: absolute;
 						top: 25%;
 						width: 80%;
 						height: 210px;
 					}
 					&:nth-of-type(2) {
-						position: absolute;
 						top: 68%;
 						left: 5%;
 						width: 40%;
@@ -596,58 +413,35 @@
 					}
 
 					&:nth-of-type(3) {
-						position: absolute;
 						top: 50%;
 						left: 50%;
 						width: 50%;
 						height: 145px;
 					}
-
-					img {
-						position: absolute;
-						top: -25%;
-						width: 100%;
-						height: 150%;
-						object-fit: cover;
-					}
 				}
 			}
 			.photos {
-				margin: 50px 0;
+				margin: 80px 0 50px;
 				.frame {
 					width: 100%;
-					position: relative;
 					padding: 0;
 					margin: 0;
 					span {
-						font: italic 4vmin/1 'Lora';
-						position: absolute;
-						top: -12vmin;
-						right: 5vmin;
-						&::before {
-							content: '';
-							display: block;
-							width: 150%;
-							height: 1px;
-							background-color: #333;
-							position: absolute;
-							right: 0;
-							top: -1vmin;
-						}
+						font: italic 26px/1 'Lora';
+						top: -50px;
+						right: 20px;
 					}
 					.pics {
 						width: 70vw;
-						overflow: hidden;
 						margin: 0 auto;
 						.slide {
 							width: 70vw;
 							height: 35vw;
-							position: relative;
 							margin: 0 auto;
 							img {
 								position: absolute;
 								width: 70vw;
-								height: 45vw;
+								height: 35vw;
 								padding: 0 30px;
 								opacity: 0;
 								left: 0%;
@@ -659,16 +453,18 @@
 							}
 						}
 						.index {
+							display: block;
 							margin-left: 10%;
-							margin-top: 20%;
+							margin-top: 10%;
 
-							> li {
+							> button {
 								display: inline-block;
 								width: 2vw;
 								height: 2vw;
 								margin-left: 5vw;
 								background-color: #aaa;
 								border-radius: 50%;
+								border: none;
 							}
 						}
 					}

@@ -1,14 +1,14 @@
 nav {
 	width: 100%;
-	height: 11vmin;
+	height: 11vw;
 	position: absolute;
 	top: 0;
-	z-index: 10;
+	z-index: 6;
 	> h1 {
 		position: absolute;
 		line-height: 0;
-		top: 5vmin;
-		left: 5vmin;
+		top: 5vw;
+		left: 5vw;
 		a {
 			font: bold 24px/1 'Poppins';
 			color: #222;
@@ -18,7 +18,7 @@ nav {
 	.menu-pc {
 		ul {
 			position: absolute;
-			top: 5vmin;
+			top: 5vw;
 			right: 50%;
 			transform: translateX(50%);
 			li {
@@ -46,7 +46,7 @@ nav {
 					transition: 0.4s;
 					position: absolute;
 					overflow: hidden;
-					top: 2vmin;
+					top: 2vw;
 					right: auto;
 					transform: none;
 					> li {
@@ -73,7 +73,7 @@ nav {
 		}
 		.icon {
 			position: absolute;
-			top: 2vmin;
+			top: 2vw;
 			right: 0;
 			color: #333;
 		}
@@ -88,8 +88,8 @@ nav {
 				width: 100%;
 				display: block;
 				font: 24px/1 'Poppins';
-				margin-left: 12vmin;
-				margin-top: 3vmin;
+				margin-left: 12vw;
+				margin-top: 3vw;
 				a {
 					color: #fff;
 				}
@@ -97,8 +97,8 @@ nav {
 		}
 		.close {
 			position: fixed;
-			top: 3vmin;
-			left: 5vmin;
+			top: 3vw;
+			left: 5vw;
 			font: bold 32px/0.75 'Poppins';
 			color: #fff;
 			cursor: pointer;
@@ -111,11 +111,11 @@ nav {
 
 @media screen and (max-width: 1179px) {
 	nav {
-		height: 11vmin;
+		height: 11vw;
 		h1 {
-			top: 7.5vmin;
-			left: 13vmin;
-			font: bold 6vmin/1 'arial';
+			top: 7.5vw;
+			left: 13vw;
+			font: bold 6vw/1 'arial';
 			a {
 				display: none;
 			}
@@ -126,13 +126,18 @@ nav {
 		.menu-tabl {
 			display: block;
 			.icon {
-				top: 5vmin;
-				left: 5vmin;
-				font: bold 4vmin/0 'arial';
+				top: 5vw;
+				left: 5vw;
+				font: bold 4vw/0 'arial';
 				background: rgba(255, 255, 255, 0.808);
 				padding: 1%;
 				border-radius: 15%;
 				z-index: 5;
+			}
+			ul {
+				width: 0vw;
+				transition: 0.5s;
+				overflow: hidden;
 			}
 		}
 	}
@@ -143,16 +148,13 @@ nav {
 		.menu-tabl {
 			display: block;
 			.icon {
-				top: 5vmin;
-				left: 5vmin;
-				font: bold 6.5vmin/0 'arial';
+				top: 5vw;
+				left: 5vw;
+				font: bold 6.5vw/0 'arial';
 				background: rgba(255, 255, 255, 0.808);
 				padding: 2%;
 				border-radius: 15%;
 				z-index: 5;
-			}
-			ul {
-				width: 45vw;
 			}
 		}
 	}
@@ -163,23 +165,24 @@ nav {
 		.menu-tabl {
 			display: block;
 			.icon {
-				top: 5vmin;
-				left: 5vmin;
-				font: bold 6.5vmin/0 'arial';
+				top: 6vw;
+				left: 5vw;
+				font: bold 6.5vw/0 'arial';
 				background: rgba(255, 255, 255, 0.808);
 				padding: 2%;
 				border-radius: 15%;
 				z-index: 5;
 			}
 			ul {
-				width: 15rem;
+				width: 0vw;
+				overflow: hidden;
 				li {
-					margin-top: 5vmin;
-					margin-left: 15vmin;
+					margin-top: 5vw;
+					margin-left: 15vw;
 				}
 			}
 			.close {
-				top: 5vmin;
+				top: 5vw;
 			}
 		}
 	}
