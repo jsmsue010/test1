@@ -60,6 +60,11 @@ function Youtube_content() {
 				<Popup setOpen={setOpen} setFocusOn={setFocusOn} type={type}>
 					<iframe
 						aria-label={'youtube video'}
+						title={
+							vid[index].snippet.title
+								? vid[index].snippet.title
+								: 'youtube video'
+						}
 						src={
 							`https://www.youtube.com/embed/` +
 							vid[index].snippet.resourceId.videoId

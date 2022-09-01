@@ -8,10 +8,133 @@
   <meta name="description" content="Web site created using create-react-app" />
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44a592819a30c1c97bf844e1b73a78ea"></script>
   <title>Chrome Kitchen</title>
+  <style>
+    .default {
+      position: absolute;
+      display: none;
+    }
+
+    .vids {
+      position: absolute;
+      display: none;
+    }
+
+    .mask {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.616);
+      opacity: 0;
+      transition: all 1s;
+      z-index: 10;
+    }
+
+    .mask.on {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="mask on"></div>
+  <div class="default"></div>
+  <div class="vids"></div>
   <div id="root"></div>
+
+  <script>
+    const def = document.querySelector('.default')
+    const defVids = document.querySelector('.vids')
+    const mask = document.querySelector('.mask')
+
+    const pics = [
+      `/react-web/img/spon_Moment.jpg`,
+      `/react-web/img/brandMoment.jpg`,
+      `/react-web/img/product3_Moment.jpg`,
+      `/react-web/img/brand2_Moment.jpg`,
+      `/react-web/img/detail0.jpg`,
+      `/react-web/img/detail3.jpg`,
+      `/react-web/img/detail4.jpg`,
+      `/react-web/img/detail2.jpg`,
+      `/react-web/img/product3.jpg`,
+      `/react-web/img/detail1.jpg`,
+      `/react-web/img/brand3.jpg`,
+      `/react-web/img/brand4.jpg`,
+      `/react-web/img/brand2.jpg`,
+      `/react-web/img/chrome_banner2.jpg`,
+      `/react-web/img/banner12.jpg`,
+      `/react-web/img//banner14.jpg`,
+      `/react-web/img/banner331.jpg`,
+      `/react-web/img/banner332.jpg`,
+      `/react-web/img/banner33.jpg`,
+      `/react-web/img/faq.jpg`,
+      `/react-web/img/toast.jpg`,
+      `/react-web/img/Ticino.jpg`
+    ]
+
+    const vids = [
+      `/react-web/img/product6.mp4`,
+      `/react-web/img/brand.mp4`,
+      `/react-web/img/product3.mp4`,
+      `/react-web/img/brand2.mp4`
+    ]
+
+    createDom()
+
+    Promise.race([loadVids(), loadPics()]).then((res, rej) => {
+      mask.classList.remove('on');
+      setTimeout(() => {
+        def.remove();
+        defVids.remove();
+        mask.remove();
+      }, 1000)
+    }).catch((rej) => console.log(rej))
+
+    function createDom() {
+      pics.forEach(f => {
+        const src = `<img src=${f}></img>`
+        def.innerHTML += src;
+      }
+      )
+      vids.forEach(v => {
+        const src = `<video src=${v}></video>`
+        defVids.innerHTML += src;
+      }
+      )
+    }
+
+    function loadPics() {
+      return new Promise((res, rej) => {
+        let count = 0;
+        const imgs = def.querySelectorAll('img')
+        imgs.forEach(p => {
+          p.onload = () => {
+            count++;
+            if (count == pics.length) {
+              console.log(count)
+              return res(true)
+            };
+          }
+        })
+      }).catch((e) => {
+        console.log(e)
+      })
+    };
+    function loadVids() {
+      return new Promise((res, rej) => {
+        let count = 0;
+        const vids = defVids.querySelectorAll('video')
+        vids.forEach(v => {
+          v.onloaddata = () => {
+            count++;
+            if (count == vids.length) return res(true);
+          }
+        })
+      }).catch((e) => {
+        console.log(e)
+      })
+    };
+  </script>
+
 </body>
 
 </html>

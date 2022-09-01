@@ -3,7 +3,7 @@ import Menu from '../../common/Menu';
 
 function Pages_banner({ src, pageName }) {
 	return (
-		<>
+		<header>
 			<Menu></Menu>
 			<div className='banner'>
 				<div className='text-wrap'>
@@ -15,7 +15,7 @@ function Pages_banner({ src, pageName }) {
 				</div>
 			</div>
 			<img className='banner-image' src={src} alt='' />
-		</>
+		</header>
 	);
 }
 

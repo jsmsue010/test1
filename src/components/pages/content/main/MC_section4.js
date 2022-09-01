@@ -13,7 +13,6 @@ function MC_section4() {
 	const targetEl = useRef(null);
 
 	useEffect(() => {
-		console.log('vid', vid);
 		if (vid) {
 			const data = vid.slice(1, 3);
 			setVideos(data);
@@ -86,7 +85,8 @@ function MC_section4() {
 			{open && (
 				<Popup setOpen={setOpen} setFocusOn={setFocusOn}>
 					<iframe
-						aria-label={vid[index].snippet.title}
+						aria-label={'youtube video'}
+						title={vid[index].snippet.title}
 						src={
 							`https://www.youtube.com/embed/` +
 							videos[index].snippet.resourceId.videoId

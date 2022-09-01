@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './scss/style.scss';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Layout from './components/common/Layout';
 

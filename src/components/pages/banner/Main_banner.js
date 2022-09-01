@@ -196,7 +196,7 @@ function Main_banner() {
 		if (e.key === 'Tab') {
 			e.preventDefault();
 			const bt = indexButton.current.querySelectorAll('button');
-			bt[0].focus();
+			bt[index.current].focus();
 		}
 		if (e.shiftKey && e.key === 'Tab') {
 			e.preventDefault();

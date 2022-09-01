@@ -14,7 +14,7 @@ import Youtube_content from '../pages/content/youtube/Youtube_content';
 
 function Layout({ children }) {
 	const init = useRef(null);
-	const test = useRef(null);
+	const a = useRef(null);
 
 	useEffect(() => {
 		//새로고침시 화면 제일 위로.
@@ -80,18 +80,17 @@ function Layout({ children }) {
 
 	return (
 		<div className='layout'>
-			<div className='skipNavi' tabIndex='1' ref={init}>
+			<div className='skipNavi' tabIndex='0' ref={init}>
 				<button
-					aria-label='본문바로가기'
-					onClick={(e) => {
-						test.current.focus();
+					onClick={() => {
+						a.current.focus();
 					}}>
 					본문으로
 				</button>
 			</div>
 			<>{banner}</>
 			<main>
-				<div className='anchor' tabIndex='-1' ref={test} />
+				<div className='anchor' tabIndex='-1' ref={a} />
 				{content}
 			</main>
 			<Footer tabIndex='0'>footer</Footer>

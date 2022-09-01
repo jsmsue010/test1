@@ -27,6 +27,7 @@ function MC_slogan() {
 		console.log(ratio);
 		move(ratio);
 	};
+
 	const move = (n) => {
 		slogan.current.style.marginLeft = `${10 - n}%`;
 	};
