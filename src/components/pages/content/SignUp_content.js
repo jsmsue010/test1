@@ -95,7 +95,7 @@ function SignUp_content() {
 	};
 
 	return (
-		<article className='sign-up'>
+		<article className='sign-up' tabIndex={0}>
 			<h1>WELCOME TO CHROME KITCHEN</h1>
 			<div className='inner'>
 				<section className='welcome'>

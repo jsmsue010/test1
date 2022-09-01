@@ -58,7 +58,7 @@ function BDC_read({ data, setData }) {
 							</React.Fragment>
 						</div>
 						{open === idx ? (
-							<div className='hidden_box' ref={hiddenBox}>
+							<div className='hidden_box' ref={hiddenBox} tabIndex={0}>
 								{update ? (
 									<BDC_update
 										index={index}

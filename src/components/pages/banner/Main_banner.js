@@ -213,7 +213,7 @@ function Main_banner() {
 	};
 
 	return (
-		<>
+		<header>
 			<Menu />
 			<div className='main_visual' ref={init} tabIndex={mobile ? 0 : null}>
 				<h1>Chrome Kitchen</h1>
@@ -279,7 +279,7 @@ function Main_banner() {
 					})}
 				</div>
 			</div>
-		</>
+		</header>
 	);
 }
 
