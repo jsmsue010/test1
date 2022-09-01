@@ -17,11 +17,9 @@ function BDC_update({
 			//새로운 배열을 만들어서
 			if (index === idx) {
 				d = { title: input.current.value, text: textarea.current.value }; //업데이트 해주고
-				console.log(d);
 			}
 			return d; //반환
 		});
-		console.log(newData);
 		setData(newData); //set.
 		setUpdate(false);
 	};

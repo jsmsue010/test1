@@ -24,7 +24,6 @@ function MC_slogan() {
 		const len = window.innerHeight;
 		//console.log(scr);
 		const ratio = ((scr - scrStart) / len) * 65;
-		console.log(ratio);
 		move(ratio);
 	};
 

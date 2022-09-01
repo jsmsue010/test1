@@ -7,16 +7,13 @@ function BDC_create({ data, setData }) {
 
 	const create = (e) => {
 		const title = input.current.value.trim();
-		console.log(title);
 		const text = textarea.current.value.trim();
-		console.log(text);
 		if ((title && text) === '') {
 			alert('내용을 입력해주세요');
 			return;
 		}
 		const newObj = { title: title, text: text };
 		setData([newObj, ...data]);
-		console.log(data);
 		input.current.value = '';
 		textarea.current.value = '';
 		setWrite(false);

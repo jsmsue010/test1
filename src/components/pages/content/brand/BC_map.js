@@ -7,8 +7,6 @@ function BC_map() {
 	const [map, setMap] = useState(); //안에 들어갈 자료형 적확하게 모르겠다면, null로! 자료형이 다르면 set되지 않는다.
 	const [index, setIndex] = useState(0);
 
-	console.log('map s');
-
 	const info = [
 		{
 			title: 'Head Office',

@@ -7,7 +7,6 @@ import YC_photos from './YC_photos';
 
 function Youtube_content() {
 	const vid = useSelector((state) => state.youtubeReducer.youtube);
-	console.log(vid);
 
 	//	const [ele, setEle] = useState(null);
 	const [sps, setSps] = useState([]);
@@ -19,7 +18,6 @@ function Youtube_content() {
 	const [type, setType] = useState('');
 
 	useEffect(() => {
-		console.log(vid);
 		if (vid) {
 			setSps(vid.slice(3, 6));
 			setAdv(vid.slice(0, 3));

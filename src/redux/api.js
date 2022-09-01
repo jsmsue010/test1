@@ -15,15 +15,11 @@ const youtube_url = `https://www.googleapis.com/youtube/v3/playlistItems?part=sn
 export const getYoutube = async () => {
 	const res = axios.get(youtube_url);
 	const data = await res;
-	console.log(data.data.items);
 	return data;
 };
 
 export const getFlickr = async () => {
 	const res = axios.get(url);
 	const data = await res;
-	console.log(data);
-	console.log(data.data.photos.photo);
 	return data;
-	//(json.data.photos.photo);
 };

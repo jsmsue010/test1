@@ -9,16 +9,13 @@ function YC_sponsorship({
 	setType,
 }) {
 	const vids = useRef(null);
-	//const vidIndex = useRef(0);
-	let vidIndex = 0;
+	const vidIndex = useRef(0);
 
 	useEffect(() => {
 		if (vids.current) {
 			const io = new IntersectionObserver((entry) => {
-				console.log('?');
 				if (entry[0].isIntersecting) {
 					const spsBox = vids.current.querySelectorAll('.sps-box');
-					console.log(spsBox);
 					spsBox.forEach((s) => (s.style.opacity = `1`));
 				}
 			});
@@ -29,8 +26,7 @@ function YC_sponsorship({
 	useEffect(() => {
 		if (focusOn === 'sps') {
 			const sps = vids.current.querySelectorAll('.sps-box');
-			//sps[vidIndex.current].focus();
-			console.log(sps[vidIndex]);
+			sps[vidIndex.current].focus();
 		}
 	}, [focusOn]);
 
@@ -39,9 +35,7 @@ function YC_sponsorship({
 		setOpen(true);
 		setFocusOn(false);
 		setType('sps');
-		//vidIndex.current = idx;
-		vidIndex = idx;
-		console.log(vidIndex);
+		vidIndex.current = idx;
 	};
 
 	const focusMove = (e, idx) => {

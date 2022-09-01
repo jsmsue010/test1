@@ -31,7 +31,6 @@ function YC_advertisement({
 
 	useEffect(() => {
 		if (focusOn === 'adv') {
-			console.log(focusOn);
 			const advs = vids.current.querySelectorAll('.adv-box');
 			advs[advIndex.current].focus();
 		}

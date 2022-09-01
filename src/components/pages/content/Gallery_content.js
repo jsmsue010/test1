@@ -13,7 +13,6 @@ function Gallery_content() {
 	const targetEl = useRef(null);
 
 	useEffect(() => {
-		console.log(pics);
 		if (pics) {
 			setArr(pics);
 		}

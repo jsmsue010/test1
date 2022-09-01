@@ -91,7 +91,6 @@ function MC_section1() {
 	}, [mobile]);
 
 	const animation = (e) => {
-		console.log(e.target);
 		e.target.style.opacity = 1;
 		e.target.style.transform = 'translateX(0%)';
 	};

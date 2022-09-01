@@ -52,8 +52,6 @@ function BC_story() {
 
 	useEffect(() => {
 		const io = new IntersectionObserver((entry) => {
-			console.log(svg.current);
-			console.log(entry[0]);
 			if (entry[0].isIntersecting && svg.current) {
 				svg.current.classList.add('on');
 			}

@@ -20,7 +20,6 @@ function SignUp_content() {
 	const [msg, setMsg] = useState({});
 
 	const check = (val) => {
-		console.log(val);
 		const err = {};
 
 		const string = /[a-zA-Z]/;
@@ -94,10 +93,6 @@ function SignUp_content() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 	};
-
-	useEffect(() => {
-		console.log(val);
-	}, [val]);
 
 	return (
 		<article className='sign-up'>
