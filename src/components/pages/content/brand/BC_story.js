@@ -30,9 +30,11 @@ function BC_story() {
 	const slide = new Slide(350, 85, 3);
 
 	const touchStart = (e) => {
-		press = true;
-		const first = e.changedTouches[0].clientX;
-		slide.start = first;
+		if (window.innerWidth <= 450) {
+			press = true;
+			const first = e.changedTouches[0].clientX;
+			slide.start = first;
+		}
 	};
 	const touchMove = (e) => {
 		if (press) {
@@ -47,7 +49,8 @@ function BC_story() {
 	};
 
 	const focusMove = (idx) => {
-		if (window.innerWidth < 450) ref.current.style.marginLeft = `${idx * -85}%`;
+		if (window.innerWidth <= 450)
+			ref.current.style.marginLeft = `${idx * -85}%`;
 	};
 
 	useEffect(() => {

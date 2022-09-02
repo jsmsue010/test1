@@ -9,9 +9,11 @@ function PC_features() {
 	const slide = new Slide(350, 87, 4);
 
 	const touchStart = (e) => {
-		press = true;
-		const first = e.changedTouches[0].clientX;
-		slide.start = first;
+		if (window.innerWidth < 550) {
+			press = true;
+			const first = e.changedTouches[0].clientX;
+			slide.start = first;
+		}
 	};
 	const touchMove = (e) => {
 		if (press) {
@@ -25,6 +27,9 @@ function PC_features() {
 		ref.current.style.transition = '0.5s';
 		const end = e.changedTouches[0].clientX;
 		ref.current.style.marginLeft = `${slide.slideEnd(end)}%`;
+	};
+	const focusMove = (idx) => {
+		if (window.innerWidth < 550) ref.current.style.marginLeft = `${idx * -87}%`;
 	};
 
 	const img = [
@@ -59,9 +64,6 @@ function PC_features() {
 		`perfect to catalyze as much light as possible in the kitchen`,
 	];
 
-	const focusMove = (idx) => {
-		if (window.innerWidth < 550) ref.current.style.marginLeft = `${idx * -87}%`;
-	};
 	return (
 		<div className='slide'>
 			<h3 className='hidden'>features</h3>

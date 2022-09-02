@@ -39,9 +39,11 @@ function MC_section2() {
 	const slide = new Slide(350, 85, 3);
 
 	const touchStart = (e) => {
-		press = true;
-		const first = e.changedTouches[0].clientX;
-		slide.start = first;
+		if (window.innerWidth <= 500) {
+			press = true;
+			const first = e.changedTouches[0].clientX;
+			slide.start = first;
+		}
 	};
 
 	const touchMove = (e) => {
@@ -57,7 +59,8 @@ function MC_section2() {
 	};
 
 	const focusMove = (idx) => {
-		if (window.innerWidth < 500) img.current.style.marginLeft = `${idx * -85}%`;
+		if (window.innerWidth <= 500)
+			img.current.style.marginLeft = `${idx * -85}%`;
 	};
 
 	return (
